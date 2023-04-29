@@ -143,9 +143,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd6fee72c07420248b19b5590abc13c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isShooting: 0
+  isMainGunRotating: 0
   target: {x: 0, y: 0, z: 0}
-  _turnSpeed: 5
+  turnSpeed: 5
+  bulletPrefab: {fileID: 2628850132464238609, guid: 0ff0af6dd579bf345a6c375525afd994, type: 3}
 --- !u!1 &6203591774716178943
 GameObject:
   m_ObjectHideFlags: 0
@@ -160,7 +161,7 @@ GameObject:
   - component: {fileID: 6203591774716178941}
   m_Layer: 0
   m_Name: Weapon Barrel
-  m_TagString: Untagged
+  m_TagString: ShootingPlace
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -241,5 +242,5 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.11422458, y: 1, z: 1}
+  m_Center: {x: 0.4428878, y: 0, z: 3.2464452e-15}
