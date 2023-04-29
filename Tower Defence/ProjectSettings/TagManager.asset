@@ -6,6 +6,11 @@ TagManager:
   tags:
   - Enemy
   - ShootingPlace
+  - MainGun
+  - Road
+  - MainTower
+  - Bullet
+  - Turret
   layers:
   - Default
   - TransparentFX
