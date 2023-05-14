@@ -24,6 +24,9 @@ public class BaseBulletBehavior : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        if(other.tag == "Enemy"){
+            other.GetComponent<BasicEnemy>().damageHP(Damage);
+        }
         Destroy(gameObject);
     }
 
