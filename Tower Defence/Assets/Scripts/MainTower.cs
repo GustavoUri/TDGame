@@ -5,15 +5,14 @@ using UnityEngine;
 public class MainTower : MonoBehaviour
 {
     public int health = 100;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+    
+    public void damageHP(int damage){
+        health -=damage;
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+    public void addHP(int addHP){
+        health +=addHP;
+    }
+    void OnTriggerEnter(Collider col){
+        Debug.Log("RUUUN");
     }
 }
