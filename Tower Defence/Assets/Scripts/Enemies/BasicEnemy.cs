@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 public class BasicEnemy : MonoBehaviour
@@ -25,26 +27,28 @@ public class BasicEnemy : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {/*
-        var pos = transform.position;
-        var towerPos = tower.position;
-        var dist = Vector3.Distance(towerPos, pos);
-        if (!(dist > 10)) return;
-        var diff = towerPos - pos;
-        transform.Translate(diff * (Time.deltaTime * speed), Space.World);
-    */
+    {
         navMeshAgent.SetDestination(followPosition.position);
     }
 
     public void damageHP(int damage){
         health -=damage;
     }
-
-    internal void DivideSpeed(float divider)
+    
+    private IEnumerator Stagger(float divider, float time)
     {
-        if (_isStaggered) return;
         _isStaggered = true;
-        speed /= divider;
+        navMeshAgent.speed /= divider;
+        yield return new WaitForSeconds(time);
+        navMeshAgent.speed *= divider;
+        _isStaggered = false;
+    }
+
+    internal void DivideSpeed(float divider, float time)
+    {
+        //Debug.Log("ds");
+        if (_isStaggered) return;
+        StartCoroutine(Stagger(divider, time));
     }
     private void death(){
         if (health <=0 ){

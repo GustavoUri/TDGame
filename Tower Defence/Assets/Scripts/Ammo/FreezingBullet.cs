@@ -10,7 +10,7 @@ public class FreezingBullet : BaseBulletBehavior
         if (other.CompareTag("Enemy"))
         {
             var enemyScript = other.GetComponent<BasicEnemy>();
-            enemyScript.DivideSpeed(FreezingRatio);
+            enemyScript.DivideSpeed(FreezingRatio, FreezingTime);
         }
         Destroy(gameObject);
     }
