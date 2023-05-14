@@ -8,11 +8,10 @@ public class MainTower : MonoBehaviour
     
     public void damageHP(int damage){
         health -=damage;
+        Debug.Log("hp:"+health);
     }
     public void addHP(int addHP){
         health +=addHP;
     }
-    void OnTriggerEnter(Collider col){
-        Debug.Log("RUUUN");
-    }
+
 }
