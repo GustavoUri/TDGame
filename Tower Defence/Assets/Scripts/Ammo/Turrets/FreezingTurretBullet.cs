@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class FreezingBullet : BaseBulletBehavior
+public class FreezingTurretBullet : BaseTurretBullet
 {
     internal float FreezingTime { get; set; }
     internal float FreezingRatio { get; set; }
@@ -11,6 +11,7 @@ public class FreezingBullet : BaseBulletBehavior
         {
             var enemyScript = other.GetComponent<BasicEnemy>();
             enemyScript.DivideSpeed(FreezingRatio, FreezingTime);
+            enemyScript.health -= Damage;
         }
         Destroy(gameObject);
     }

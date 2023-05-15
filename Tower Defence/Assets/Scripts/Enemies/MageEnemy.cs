@@ -1,28 +1,27 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 public class MageEnemy : BasicEnemy
 {
-    private float distanceToTower;
+    private float _distanceToTower;
     [SerializeField] private int plusStealHP;
     [SerializeField]private int stealHpForSecond;
-    private MainTower mainTower;
+    private MainTower _mainTower;
     // Start is called before the first frame update
     void Start()
     {
         tower = GameObject.FindWithTag("MainTower").transform;
-        mainTower = tower.GetComponent<MainTower>();
-        navMeshAgent = GetComponent<NavMeshAgent>();
-        navMeshAgent.speed = speed;
-        followPosition = tower.transform.position;
+        _mainTower = tower.GetComponent<MainTower>();
+        NavMeshAgent = GetComponent<NavMeshAgent>();
+        NavMeshAgent.speed = speed;
+        FollowPosition = tower.transform.position;
         endPosition = new Vector3(transform.position.x,transform.position.y,transform.position.z);
-        StartCoroutine(stealHP());
+        StartCoroutine(StealHp());
     }
-    IEnumerator stealHP(){
+    IEnumerator StealHp(){
         this.stealHp +=stealHpForSecond;
-        mainTower.damageHP(stealHpForSecond);
+        _mainTower.health-=stealHp;
         yield return new WaitForSeconds(1);
-        StartCoroutine(stealHP());
+        StartCoroutine(StealHp());
     }
 }

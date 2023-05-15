@@ -1,9 +1,10 @@
-﻿using UnityEngine;
+﻿using Ammo.Interfaces;
+using UnityEngine;
 
-public class BaseBulletBehavior : MonoBehaviour
+public class BaseTurretBullet : MonoBehaviour, IBullet
 {
-    internal float Speed { get; set; }
-    internal int Damage { get; set; }
+    public float Speed { get; set; }
+    public int Damage { get; set; }
     internal Transform Target { get; set; }
     private Transform _transform;
 
@@ -16,17 +17,17 @@ public class BaseBulletBehavior : MonoBehaviour
     private void Update()
     {
         if (Target == null) Destroy(gameObject);
-        var position = Target.position;
-        var dir = position - _transform.position;
-        Move(dir);
+        else
+        {
+            var position = Target.position;
+            var dir = position - _transform.position;
+            Move(dir);
+        }
     }
 
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Enemy"){
-            other.GetComponent<BasicEnemy>().damageHP(Damage);
-        }
         Destroy(gameObject);
     }
 

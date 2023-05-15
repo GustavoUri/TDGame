@@ -1,19 +1,23 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 
-public class ArtilleryBullet : BaseBulletBehavior
+public class ArtilleryTurretBullet : BaseTurretBullet
 {
     [SerializeField] private float explosionRange;
     [SerializeField] private string enemyTag = "Enemy";
+
     private void OnTriggerEnter(Collider other)
     {
         var enemies = GameObject.FindGameObjectsWithTag(enemyTag);
         foreach (var enemy in enemies)
         {
+            if (enemy == null)
+                continue;
             var distance = Vector3.Distance(transform.position, enemy.transform.position);
             if (!(distance >= explosionRange)) continue;
-            Debug.Log(enemy.tag + "Boom");
-            Destroy(gameObject);
+            var enemyScript = other.GetComponent<BasicEnemy>();
+            enemyScript.health -= Damage;
         }
+
+        Destroy(gameObject);
     }
 }

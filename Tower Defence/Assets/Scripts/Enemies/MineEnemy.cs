@@ -1,14 +1,15 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MineEnemy : BasicEnemy
 {
     
-    private void OnTriggerEnter(Collider other) {
-        if (other.tag == "MainTower")
-            other.GetComponent<MainTower>().damageHP(damage);
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("MainTower"))
+        {
+            TowerScript.health -= damage;
             Destroy(gameObject);
-        
+        }
+
     }
 }

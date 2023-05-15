@@ -72,7 +72,7 @@ public class BaseTurretBehavior : MonoBehaviour
     protected virtual void Shoot()
     {
         var firedBullet = Instantiate(bulletPrefab, BulletShootPos.transform.position, transform.rotation);
-        var bulletScript = firedBullet.GetComponent<BaseBulletBehavior>();
+        var bulletScript = firedBullet.GetComponent<BaseTurretBullet>();
         SetBulletOptions(bulletScript);
     }
 
@@ -87,10 +87,10 @@ public class BaseTurretBehavior : MonoBehaviour
         _currentTime -= Time.deltaTime;
     }
 
-    protected virtual void SetBulletOptions(BaseBulletBehavior bulletScript)
+    protected virtual void SetBulletOptions(BaseTurretBullet turretBulletScript)
     {
-        bulletScript.Damage = damage;
-        bulletScript.Target = Target;
-        bulletScript.Speed = bulletSpeed;
+        turretBulletScript.Damage = damage;
+        turretBulletScript.Target = Target;
+        turretBulletScript.Speed = bulletSpeed;
     }
 }
