@@ -8,16 +8,16 @@ public class FreezingTurret : BaseTurretBehavior
     protected override void Shoot()
     {
         var firedBullet = Instantiate(bulletPrefab, BulletShootPos.transform.position, transform.rotation);
-        var bulletScript = firedBullet.GetComponent<FreezingBullet>();
+        var bulletScript = firedBullet.GetComponent<FreezingTurretBullet>();
         SetBulletOptions(bulletScript);
     }
 
-    private void SetBulletOptions(FreezingBullet bulletScript)
+    private void SetBulletOptions(FreezingTurretBullet turretBulletScript)
     {
-        bulletScript.Damage = damage;
-        bulletScript.Target = Target;
-        bulletScript.Speed = bulletSpeed;
-        bulletScript.FreezingRatio = freezingRatio;
-        bulletScript.FreezingTime = freezingTime;
+        turretBulletScript.Damage = damage;
+        turretBulletScript.Target = Target;
+        turretBulletScript.Speed = bulletSpeed;
+        turretBulletScript.FreezingRatio = freezingRatio;
+        turretBulletScript.FreezingTime = freezingTime;
     }
 }

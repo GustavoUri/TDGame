@@ -1,57 +1,58 @@
 using System.Collections;
-using System.Collections.Generic;
+using Ammo.Interfaces;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class BasicEnemy : MonoBehaviour
 {
-    protected NavMeshAgent navMeshAgent;
+    protected NavMeshAgent NavMeshAgent;
 
     [SerializeField] protected int damage;
     [SerializeField] protected float speed = 5;
     [SerializeField] protected float speedAfter = 5;
-    [SerializeField] protected int health = 100;
-    [SerializeField] protected int stealHp = 0;
-    protected bool _isStaggered;
+    [SerializeField] internal int health = 100;
+    [SerializeField] protected int stealHp;
+    [SerializeField] protected int maxHealth = 100;
+    protected bool IsStaggered;
+    protected FloatingEnemyHealthBar Bar;
     public Transform tower;
+    protected MainTower TowerScript { get; set; }
     [SerializeField] protected Vector3 endPosition;
-    protected Vector3 followPosition;
+    protected Vector3 FollowPosition;
 
     // Start is called before the first frame update
     void Start()
     {
+        Bar = gameObject.GetComponentInChildren<FloatingEnemyHealthBar>();
         tower = GameObject.FindWithTag("MainTower").transform;
-        navMeshAgent = GetComponent<NavMeshAgent>();
-        navMeshAgent.speed = speed;
-        followPosition = tower.transform.position;
+        TowerScript = tower.GetComponent<MainTower>();
+        NavMeshAgent = GetComponent<NavMeshAgent>();
+        NavMeshAgent.speed = speed;
+        FollowPosition = tower.transform.position;
         endPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z);
     }
 
     // Update is called once per frame
     void Update()
     {
-        navMeshAgent.SetDestination(followPosition);
-        isRunAway();
-    }
-
-    public virtual void damageHP(int damage)
-    {
-        health -= damage;
+        Debug.Log(health);
+        NavMeshAgent.SetDestination(FollowPosition);
+        DestroyOnDistance();
     }
 
     private IEnumerator Stagger(float divider, float time)
     {
-        _isStaggered = true;
-        navMeshAgent.speed /= divider;
+        IsStaggered = true;
+        NavMeshAgent.speed /= divider;
         yield return new WaitForSeconds(time);
-        navMeshAgent.speed *= divider;
-        _isStaggered = false;
+        NavMeshAgent.speed *= divider;
+        IsStaggered = false;
     }
 
 
     internal void DivideSpeed(float divider, float time)
     {
-        if (_isStaggered) return;
+        if (IsStaggered) return;
         StartCoroutine(Stagger(divider, time));
     }
 
@@ -59,35 +60,44 @@ public class BasicEnemy : MonoBehaviour
     {
         if (health <= 0)
         {
-            returnHP(stealHp); // Возращаем ХП
+            ReturnHpToTower(stealHp); // Возращаем ХП
             Destroy(gameObject); // Умираем
         }
     }
 
-    private void returnHP(int stealHp)
+    private void ReturnHpToTower(int stealedHp)
     {
-        tower.GetComponent<MainTower>().addHP(stealHp); // Возращаем ХП
+        TowerScript.health += stealedHp;
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "MainTower")
+        if (other.CompareTag("MainTower"))
         {
-            changeSpeed(); //Меняем скорость, если этого не надо указываем speedAfter := speed
-            other.GetComponent<MainTower>().damageHP(damage); // Наносим урон по центру 
-            followPosition = endPosition; // Меняем поизицию на обратную
+            СhangeSpeed(); //Меняем скорость, если этого не надо указываем speedAfter := speed
+            TowerScript.health -= damage;
+            FollowPosition = endPosition; // Меняем поизицию на обратную
             stealHp += damage; // С кладываем сворованное хп
+        }
+        
+        if (other.CompareTag("Bullet"))
+        {
+            var bulletScript = other.GetComponent<IBullet>();
+            health -= bulletScript.Damage;
+            Bar.UpdateHealthBar(health, maxHealth);
+            if (health <= 0)
+                Destroy(gameObject);
         }
     }
 
-    public void changeSpeed()
+    protected virtual void СhangeSpeed()
     {
-        navMeshAgent.speed = speedAfter;
+        NavMeshAgent.speed = speedAfter;
     }
 
-    private void isRunAway()
+    protected virtual void DestroyOnDistance()
     {
-        if (Vector3.Distance(transform.position, endPosition) < 0.5 && followPosition == endPosition)
+        if (Vector3.Distance(transform.position, endPosition) < 0.5 && FollowPosition == endPosition)
         {
             Destroy(gameObject);
         }

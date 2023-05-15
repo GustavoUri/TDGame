@@ -1,9 +1,11 @@
 using System.Linq;
 using UnityEngine;
 
-public class MainGunMouseTrackingAndShooting : MonoBehaviour
+public class BaseMainGun : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] protected float speed;
+    [SerializeField] protected int damage;
+    [SerializeField] protected int price;
     public bool isMainGunRotating;
     public Vector3 target;
     public float turnSpeed = 5f;
@@ -52,12 +54,11 @@ public class MainGunMouseTrackingAndShooting : MonoBehaviour
     void Shoot()
     {
         var firedBullet = Instantiate(bulletPrefab, _bulletShootPos.transform.position, transform.rotation);
-        var bulletScript = firedBullet.GetComponent<BaseBulletBehavior>();
+        var bulletScript = firedBullet.GetComponent<BaseMainGunBullet>();
         firedBullet.transform.SetParent(transform);
-        var trans = _hit.transform;
-        var pos = new Vector3() {x = target.x, y = target.y, z = target.z};
-        trans.position = pos;
-        bulletScript.Target = trans;
+        bulletScript.TargetPosition = target;
+        bulletScript.Damage = damage;
+        bulletScript.Speed = speed;
         Debug.Log(_hit.transform);
     }
 }
