@@ -21,24 +21,26 @@ public class BaseMainGun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyUp("space"))
-        {
-            isMainGunRotating = !isMainGunRotating;
-        }
+        if (!GameState.isGamePaused()) {
+            if (Input.GetKeyUp("space"))
+            {
+                isMainGunRotating = !isMainGunRotating;
+            }
 
-        if (isMainGunRotating)
-            return;
-        var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out _hit))
-        {
-            target = _hit.point;
-        }
-        
+            if (isMainGunRotating)
+                return;
+            var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out _hit))
+            {
+                target = _hit.point;
+            }
 
-        Rotate();
-        if (Input.GetMouseButtonUp(0))
-        {
-            Shoot();
+
+            Rotate();
+            if (Input.GetMouseButtonUp(0))
+            {
+                Shoot();
+            }
         }
     }
 
