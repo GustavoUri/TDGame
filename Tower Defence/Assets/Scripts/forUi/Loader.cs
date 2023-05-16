@@ -13,6 +13,7 @@ public static class Loader
 
 
     public static void Load(int i,bool islvlload) {
+        Time.timeScale = 1;
         SceneManager.LoadScene("LoadingScene");
         if (islvlload)
         {

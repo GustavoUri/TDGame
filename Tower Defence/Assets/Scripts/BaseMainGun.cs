@@ -44,6 +44,7 @@ public class BaseMainGun : MonoBehaviour
 
     void Rotate()
     {
+        if(Time.deltaTime == 0) return;
         var dir = target - transform.position;
         var lookRotation = Quaternion.LookRotation(dir);
         var rotation = lookRotation.eulerAngles;
@@ -53,6 +54,7 @@ public class BaseMainGun : MonoBehaviour
     
     void Shoot()
     {
+        if(Time.deltaTime == 0) return;
         var firedBullet = Instantiate(bulletPrefab, _bulletShootPos.transform.position, transform.rotation);
         var bulletScript = firedBullet.GetComponent<BaseMainGunBullet>();
         firedBullet.transform.SetParent(transform);
