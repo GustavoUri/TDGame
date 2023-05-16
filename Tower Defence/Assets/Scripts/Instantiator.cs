@@ -1,19 +1,24 @@
 using UnityEngine;
 using Unity.UI;
+using UnityEngine.EventSystems;
+
 public class Instantiator : MonoBehaviour
 {
     private GameObject _instantiationPrefab;
 
     private CameraMovement _camScript;
     public Vector3 place;
-
+    [SerializeField] private Canvas canvas;
     public GameObject ordinaryTurret;
     public GameObject freezingTurret;
     public GameObject artilleryTurret;
     public GameObject sniperTurret;
+
+    private TurretsInstantiatingUI _canvasScript;
     // Start is called before the first frame update
     void Start()
     {
+        _canvasScript = canvas.GetComponent<TurretsInstantiatingUI>();
         _camScript = Camera.main.gameObject.GetComponent<CameraMovement>();
         _instantiationPrefab = ordinaryTurret;
     }
@@ -21,7 +26,7 @@ public class Instantiator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonUp(0) && _camScript.isOnAbove)
+        if (Input.GetMouseButtonUp(0) && _camScript.isOnAbove && !EventSystem.current.IsPointerOverGameObject())
         {
             var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             // if (_plane.Raycast(ray, out var distance))

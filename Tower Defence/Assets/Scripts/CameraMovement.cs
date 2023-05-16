@@ -17,6 +17,8 @@ public class CameraMovement : MonoBehaviour
     public bool isOnAbove; 
     [SerializeField] private int maxZ = 100;
     private bool _isRotDone;
+
+    [SerializeField] private GameObject turretsUI;
     // Start is called before the first frame update
 
 
@@ -61,7 +63,7 @@ public class CameraMovement : MonoBehaviour
         switch (isOnSpace)
         {
             case true when _isRotDone == false:
-                MakeViewFromAbove();
+                MakeViewForTurretsInstantiating();
                 break;
             case false when _isRotDone == false:
                 MakeViewForTargeting();
@@ -92,8 +94,9 @@ public class CameraMovement : MonoBehaviour
         transform.Translate(direction * (Time.deltaTime * speed), Space.World);
     }
 
-    void MakeViewFromAbove()
+    void MakeViewForTurretsInstantiating()
     {
+        turretsUI.SetActive(true);
         isOnAbove = true;
         var newRot = Quaternion.Euler(new Vector3(90, 0, 0));
         var rotation = Quaternion.Lerp(transform.rotation, newRot, Time.deltaTime * turnSpeed).eulerAngles;
@@ -109,6 +112,7 @@ public class CameraMovement : MonoBehaviour
 
     void MakeViewForTargeting()
     {
+        turretsUI.SetActive(false);
         isOnAbove = false;
         var newRot = Quaternion.Euler(new Vector3(45, 0, 0));
         var rotation = Quaternion.Lerp(transform.rotation, newRot, Time.deltaTime * turnSpeed).eulerAngles;

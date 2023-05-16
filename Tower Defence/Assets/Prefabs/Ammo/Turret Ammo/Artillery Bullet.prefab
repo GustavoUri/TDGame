@@ -127,6 +127,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 539d6de31ab44e3083dcd42f9e98c32e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  explosionRange: 3
+  explosionRange: 6
   enemyTag: Enemy
