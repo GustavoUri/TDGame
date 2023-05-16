@@ -29,10 +29,11 @@ public class CameraMovement : MonoBehaviour
             isOnSpace = !isOnSpace;
         }
         
-        if (Input.GetKeyUp(KeyCode.Escape))
-        {
-            isOnEscape = !isOnEscape;
-        }
+
+        isOnEscape = GameState.isGamePaused();
+
+
+        
         if (isOnEscape)
             return;
 

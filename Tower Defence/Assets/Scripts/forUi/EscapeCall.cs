@@ -11,7 +11,6 @@ public class EscapeCall : MonoBehaviour
     public Button menuButton;
 
 
-    private double drebezg = 0.0;
 
     // Start is called before the first frame update
     void Start()
@@ -28,6 +27,7 @@ public class EscapeCall : MonoBehaviour
 
         menuButton.onClick.AddListener(() => {
             Loader.Load(0, false);
+            GameState.PauseGame(false);
         });
 
     }
@@ -36,8 +36,7 @@ public class EscapeCall : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Escape) && (drebezg <= 0)) {
-            drebezg = 0.2;
+        if (Input.GetKeyUp(KeyCode.Escape)) {
             if (menuWindow.activeSelf)
             {
                 menuWindow.SetActive(false);
@@ -49,9 +48,6 @@ public class EscapeCall : MonoBehaviour
             }
         }
 
-        if (drebezg > 0) {
-            drebezg -= Time.unscaledDeltaTime;
-        }
 
     }
 }
