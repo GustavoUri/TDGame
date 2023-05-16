@@ -1,30 +1,24 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using DefaultNamespace;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class FloatingEnemyHealthBar : MonoBehaviour
+public class FloatingEnemyHealthBar : BaseHealthBar
 {
-    [SerializeField] private Slider slider;
-    [SerializeField] private Transform target;
-    [SerializeField] private Camera camera;
+    private Transform _camera;
 
     [SerializeField] private Vector3 offset;
-    // Start is called before the first frame update
-    public void UpdateHealthBar(float currentValue, float maxValue)
-    {
-        slider.value = currentValue / maxValue;
-    }
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
+    // Start is called before the first frame update
+    private void Start()
     {
-        transform.rotation = camera.transform.rotation;
-        transform.position = target.position + offset;
+        _camera = Camera.main.transform;
+    }
+    
+    private void LateUpdate()
+    {
+        transform.LookAt(_camera);
     }
 }

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1828748816141526053
+--- !u!1 &4136751162133641307
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,24 +8,24 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1828748816141526048}
-  - component: {fileID: 1828748816141526055}
-  - component: {fileID: 1828748816141526054}
-  - component: {fileID: 1828748816141526049}
+  - component: {fileID: 4136751162133641310}
+  - component: {fileID: 4136751162133641305}
+  - component: {fileID: 4136751162133641304}
+  - component: {fileID: 4136751162133641311}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: Main Camera 1
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1828748816141526048
+--- !u!4 &4136751162133641310
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1828748816141526053}
+  m_GameObject: {fileID: 4136751162133641307}
   m_LocalRotation: {x: 0.38268343, y: 0, z: 0, w: 0.92387956}
   m_LocalPosition: {x: 0, y: 25, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -34,13 +34,13 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 45, y: 0, z: 0}
---- !u!20 &1828748816141526055
+--- !u!20 &4136751162133641305
 Camera:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1828748816141526053}
+  m_GameObject: {fileID: 4136751162133641307}
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
@@ -77,21 +77,21 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!81 &1828748816141526054
+--- !u!81 &4136751162133641304
 AudioListener:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1828748816141526053}
+  m_GameObject: {fileID: 4136751162133641307}
   m_Enabled: 1
---- !u!114 &1828748816141526049
+--- !u!114 &4136751162133641311
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1828748816141526053}
+  m_GameObject: {fileID: 4136751162133641307}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1cbf2e1fbc3c67d48ba90ea5061a4998, type: 3}
@@ -110,3 +110,4 @@ MonoBehaviour:
   turnSpeed: 10
   isOnAbove: 0
   maxZ: 50
+  turretsUI: {fileID: 0}
