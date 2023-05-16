@@ -8,7 +8,6 @@ public class CameraMovement : MonoBehaviour
     [SerializeField] private int minY = 10;
     [SerializeField] private int maxY = 100;
     [SerializeField] private float scrollSpeed = 5f;
-    public bool isOnEscape;
     public bool isOnSpace;
     [SerializeField] private int minX = -100;
     [SerializeField] private int maxX = 100;
@@ -30,13 +29,6 @@ public class CameraMovement : MonoBehaviour
             _isRotDone = false;
             isOnSpace = !isOnSpace;
         }
-        
-        if (Input.GetKeyUp(KeyCode.Escape))
-        {
-            isOnEscape = !isOnEscape;
-        }
-        if (isOnEscape)
-            return;
 
         if (Input.mousePosition.y >= Screen.height - mouseBuffer)
         {

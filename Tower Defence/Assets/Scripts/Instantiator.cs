@@ -8,17 +8,14 @@ public class Instantiator : MonoBehaviour
 
     private CameraMovement _camScript;
     public Vector3 place;
-    [SerializeField] private Canvas canvas;
     public GameObject ordinaryTurret;
     public GameObject freezingTurret;
     public GameObject artilleryTurret;
     public GameObject sniperTurret;
 
-    private TurretsInstantiatingUI _canvasScript;
     // Start is called before the first frame update
     void Start()
     {
-        _canvasScript = canvas.GetComponent<TurretsInstantiatingUI>();
         _camScript = Camera.main.gameObject.GetComponent<CameraMovement>();
         _instantiationPrefab = ordinaryTurret;
     }
