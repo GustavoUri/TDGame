@@ -44,5 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3dd665dc57d2fa44ae1b2a0b659a245, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  instantiationPrefab: {fileID: 8921556665832420959, guid: 8078717466d08864386c8a69a37486b8, type: 3}
   place: {x: 0, y: 0, z: 0}
+  ordinaryTurret: {fileID: 8921556665832420959, guid: 8078717466d08864386c8a69a37486b8, type: 3}
+  freezingTurret: {fileID: 1225041105758504461, guid: c00b46b49a49c6947bb79571a3e161ab, type: 3}
+  artilleryTurret: {fileID: 7255560793760615863, guid: 321b765077f9be94789b63ff658459e6, type: 3}
+  sniperTurret: {fileID: 7498681042895925196, guid: 06505f8d1e355f644b8949165ea9c470, type: 3}
