@@ -76,6 +76,8 @@ public class BasicEnemy : MonoBehaviour
         {
             СhangeSpeed(); //Меняем скорость, если этого не надо указываем speedAfter := speed
             TowerScript.health -= damage;
+            if(TowerScript.health <= 0)
+                Loader.Load(0, false);
             FollowPosition = endPosition; // Меняем поизицию на обратную
             stealHp += damage; // С кладываем сворованное хп
         }
