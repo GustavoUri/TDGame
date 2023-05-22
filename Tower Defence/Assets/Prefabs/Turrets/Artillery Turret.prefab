@@ -182,9 +182,10 @@ MonoBehaviour:
   <Price>k__BackingField: 100
   <ProjectileSpeed>k__BackingField: 20
   <ProjectileDamage>k__BackingField: 10
-  <Range>k__BackingField: 8
+  <Range>k__BackingField: 15
   <FireRate>k__BackingField: 2
   <TargetTag>k__BackingField: Enemy
+  <ExplosionRange>k__BackingField: 20
 --- !u!1 &7255560794686168157
 GameObject:
   m_ObjectHideFlags: 0
