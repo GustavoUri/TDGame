@@ -1,23 +1,14 @@
 ﻿using UnityEngine;
 
-public class FreezingTurret : BaseTurretBehavior
+public class FreezingTurret : BaseTurret
 {
-    [SerializeField] private float freezingTime;
-    [SerializeField] private float freezingRatio;
+    [field: SerializeField] public float FreezingTime { get; protected set; }
+    [field: SerializeField] public float FreezingRatio { get; protected set; }
 
     protected override void Shoot()
     {
-        var firedBullet = Instantiate(bulletPrefab, BulletShootPos.transform.position, transform.rotation);
-        var bulletScript = firedBullet.GetComponent<FreezingTurretBullet>();
-        SetBulletOptions(bulletScript);
-    }
-
-    private void SetBulletOptions(FreezingTurretBullet turretBulletScript)
-    {
-        turretBulletScript.Damage = damage;
-        turretBulletScript.Target = Target;
-        turretBulletScript.Speed = bulletSpeed;
-        turretBulletScript.FreezingRatio = freezingRatio;
-        turretBulletScript.FreezingTime = freezingTime;
+        var firedBullet = Instantiate(BulletPrefab, BulletShootPos.transform.position, transform.rotation);
+        var bulletScript = firedBullet.GetComponent<FreezingTurretProjectile>();
+        bulletScript.InitializeProps(ProjectileSpeed, ProjectileDamage, Target, FreezingTime, FreezingRatio);
     }
 }

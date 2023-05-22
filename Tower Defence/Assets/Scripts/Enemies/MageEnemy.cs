@@ -1,27 +1,26 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.AI;
-public class MageEnemy : BasicEnemy
+public class MageEnemy : BaseEnemy
 {
     private float _distanceToTower;
-    [SerializeField] private int plusStealHP;
-    [SerializeField]private int stealHpForSecond;
-    private MainTower _mainTower;
+    [SerializeField] private int hpStealedForSecond;
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        tower = GameObject.FindWithTag("MainTower").transform;
-        _mainTower = tower.GetComponent<MainTower>();
-        NavMeshAgent = GetComponent<NavMeshAgent>();
-        NavMeshAgent.speed = speed;
-        FollowPosition = tower.transform.position;
-        endPosition = new Vector3(transform.position.x,transform.position.y,transform.position.z);
-        StartCoroutine(StealHp());
+        Tower = GameObject.FindWithTag("MainTower");
+        TowerScript = Tower.GetComponent<MainTower>();
+        FollowPosition = Tower.transform.position;
+        var position = transform.position;
+        EndPosition = new Vector3(position.x,position.y,position.z);
+        StartCoroutine(StealHealth());
     }
-    IEnumerator StealHp(){
-        this.stealHp +=stealHpForSecond;
-        _mainTower.health-=stealHp;
-        yield return new WaitForSeconds(1);
-        StartCoroutine(StealHp());
+
+    private IEnumerator StealHealth(){
+        while (TowerScript != null)
+        {
+            StealedHealth +=hpStealedForSecond;
+            TowerScript.GetDamage(Damage, gameObject.tag);
+            yield return new WaitForSeconds(1);
+        }
     }
 }

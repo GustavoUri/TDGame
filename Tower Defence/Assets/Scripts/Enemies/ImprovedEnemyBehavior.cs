@@ -45,7 +45,7 @@ public class ImprovedEnemyBehavior : MonoBehaviour
     void Shoot()
     {
         var firedBullet = Instantiate(bulletPrefab, transform.position, transform.rotation);
-        var bulletScript = firedBullet.GetComponent<BaseTurretBullet>();
+        var bulletScript = firedBullet.GetComponent<BaseTurretProjectile>();
         firedBullet.transform.SetParent(transform);
     }
 }
