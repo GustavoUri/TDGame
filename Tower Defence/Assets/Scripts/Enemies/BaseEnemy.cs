@@ -17,7 +17,7 @@ public class BaseEnemy : MonoBehaviour, IEnemy, IDamageable, IFreezable
     [field: SerializeField] public int MaxHealth { get; protected set; }
     protected bool IsStaggered;
     protected FloatingEnemyHealthBar Bar;
-    [field:SerializeField] public GameObject Tower { get; protected set; }
+    [field: SerializeField] public GameObject Tower { get; protected set; }
     protected MainTower TowerScript { get; set; }
     [field: SerializeField] protected Vector3 EndPosition { get; set; }
     protected Vector3 FollowPosition;
@@ -70,11 +70,6 @@ public class BaseEnemy : MonoBehaviour, IEnemy, IDamageable, IFreezable
             Destroy(gameObject); // Умираем
         }
     }
-
-    // private void ReturnHpToTower(int stealedHp)
-    // {
-    //     TowerScript.Health += stealedHp;
-    // }
 
     private void OnTriggerEnter(Collider other)
     {

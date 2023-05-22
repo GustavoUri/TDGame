@@ -14,8 +14,8 @@ public class ArtilleryTurretProjectile : BaseTurretProjectile
             if (enemy == null)
                 continue;
             var distance = Vector3.Distance(transform.position, enemy.transform.position);
-            if (!(distance >= ExplosionRange)) continue;
-            var enemyScript = other.GetComponent<IDamageable>();
+            if (distance >= ExplosionRange) continue;
+            var enemyScript = enemy.GetComponent<IDamageable>();
             enemyScript.GetDamage(Damage, gameObject.tag);
         }
 
