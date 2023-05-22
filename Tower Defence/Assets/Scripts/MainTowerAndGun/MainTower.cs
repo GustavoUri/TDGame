@@ -20,4 +20,10 @@ public class MainTower : MonoBehaviour, IMainTower, IDamageable
         if(Health<=0)
             Destroy(gameObject);
     }
+
+    public void Heal(int health)
+    {
+        Health += health;
+        bar.UpdateHealthBar(Health, MaxHealth);
+    }
 }
