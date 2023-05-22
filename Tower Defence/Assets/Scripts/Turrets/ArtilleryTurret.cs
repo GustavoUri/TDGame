@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class ArtilleryTurret : BaseTurretBehavior
+public class ArtilleryTurret : BaseTurret
 {
     
 }
