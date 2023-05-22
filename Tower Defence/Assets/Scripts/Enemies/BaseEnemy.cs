@@ -64,11 +64,9 @@ public class BaseEnemy : MonoBehaviour, IEnemy, IDamageable, IFreezable
 
     private void CheckDeath()
     {
-        if (Health <= 0)
-        {
-            //ReturnHpToTower(StealedHealth); // Возращаем ХП
-            Destroy(gameObject); // Умираем
-        }
+        if (Health > 0) return;
+        TowerScript.Heal(StealedHealth);
+        Destroy(gameObject); // Умираем
     }
 
     private void OnTriggerEnter(Collider other)
