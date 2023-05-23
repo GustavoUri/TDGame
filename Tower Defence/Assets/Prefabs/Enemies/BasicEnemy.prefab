@@ -112,14 +112,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e2d3dad01366ce4fbedfc319a3fc3dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 5
-  speed: 5
-  speedAfter: 5
-  health: 100
-  stealHp: 0
-  maxHealth: 100
+  <Health>k__BackingField: 100
+  <Damage>k__BackingField: 10
+  <Speed>k__BackingField: 5
+  <SpeedAfter>k__BackingField: 5
+  <MaxHealth>k__BackingField: 100
   tower: {fileID: 0}
-  endPosition: {x: 0, y: 0, z: 0}
+  <EndPosition>k__BackingField: {x: 0, y: 0, z: 0}
 --- !u!195 &-7080679246048908894
 NavMeshAgent:
   m_ObjectHideFlags: 0

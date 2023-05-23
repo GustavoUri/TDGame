@@ -134,14 +134,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60bec75d5d4a2fa43b8027f6c0d2f6ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
-  speed: 7
-  speedAfter: 5
-  health: 50
-  stealHp: 0
-  maxHealth: 100
-  tower: {fileID: 0}
-  endPosition: {x: 0, y: 0, z: 0}
+  <Health>k__BackingField: 300
+  <Damage>k__BackingField: 50
+  <Speed>k__BackingField: 10
+  <SpeedAfter>k__BackingField: 10
+  <MaxHealth>k__BackingField: 300
+  <Tower>k__BackingField: {fileID: 0}
+  <EndPosition>k__BackingField: {x: 0, y: 0, z: 0}
 --- !u!1001 &6695986722711409868
 PrefabInstance:
   m_ObjectHideFlags: 0

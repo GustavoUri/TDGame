@@ -175,16 +175,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c737d377869f44fbad317a7065980270, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  price: 200
-  damage: 50
-  range: 30
-  fireRate: 4
-  accuracy: 4
-  shootingPlaceTag: ShootingPlace
-  bulletPrefab: {fileID: 3093257637798676299, guid: 20cac601a6a0fa54282a18a2459d84d4, type: 3}
-  enemyTag: Enemy
-  turnSpeed: 5
-  bulletSpeed: 20
+  <Target>k__BackingField: {fileID: 0}
+  <BulletPrefab>k__BackingField: {fileID: 3093257637798676299, guid: 20cac601a6a0fa54282a18a2459d84d4, type: 3}
+  <TurnSpeed>k__BackingField: 5
+  <BulletShootPos>k__BackingField: {fileID: 5258902044915002816}
+  <Price>k__BackingField: 100
+  <ProjectileSpeed>k__BackingField: 20
+  <ProjectileDamage>k__BackingField: 10
+  <Range>k__BackingField: 15
+  <FireRate>k__BackingField: 2
+  <TargetTag>k__BackingField: Enemy
+  <ExplosionRange>k__BackingField: 20
 --- !u!1 &7255560794686168157
 GameObject:
   m_ObjectHideFlags: 0
