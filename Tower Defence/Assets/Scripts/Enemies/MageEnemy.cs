@@ -1,10 +1,9 @@
 using System.Collections;
 using UnityEngine;
-
 public class MageEnemy : BaseEnemy
 {
-    [field: SerializeField] public int DamageWhileRunning { get; protected set; }
-    [field: SerializeField] public float DamageRate { get; protected set; }
+    private float _distanceToTower;
+    [SerializeField] private int hpStealedForSecond;
     // Start is called before the first frame update
     private void Start()
     {
@@ -12,16 +11,16 @@ public class MageEnemy : BaseEnemy
         TowerScript = Tower.GetComponent<MainTower>();
         FollowPosition = Tower.transform.position;
         var position = transform.position;
-        EndPosition = new Vector3(position.x, position.y, position.z);
+        EndPosition = new Vector3(position.x,position.y,position.z);
         StartCoroutine(StealHealth());
     }
 
-    private IEnumerator StealHealth()
-    {
+    private IEnumerator StealHealth(){
         while (TowerScript != null)
         {
-            TowerScript.GetDamage(DamageWhileRunning, gameObject.tag);
-            yield return new WaitForSeconds(DamageRate);
+            StealedHealth +=hpStealedForSecond;
+            TowerScript.GetDamage(Damage, gameObject.tag);
+            yield return new WaitForSeconds(1);
         }
     }
 }
