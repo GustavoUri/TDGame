@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CameraMovement : MonoBehaviour
 {
@@ -26,8 +27,7 @@ public class CameraMovement : MonoBehaviour
     {
         if (Input.GetKeyUp("space"))
         {
-            _isRotDone = false;
-            isOnSpace = !isOnSpace;
+           ChangeView();
         }
 
         if (Input.mousePosition.y >= Screen.height - mouseBuffer)
@@ -105,5 +105,11 @@ public class CameraMovement : MonoBehaviour
         {
             _isRotDone = true;
         }
+    }
+
+    public void ChangeView()
+    {
+        _isRotDone = false;
+        isOnSpace = !isOnSpace;
     }
 }
