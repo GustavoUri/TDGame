@@ -792,7 +792,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lvl1Button: {fileID: 335151609}
-  BackButton: {fileID: 297324492}
+  backButton: {fileID: 297324492}
 --- !u!4 &600299175
 Transform:
   m_ObjectHideFlags: 0
