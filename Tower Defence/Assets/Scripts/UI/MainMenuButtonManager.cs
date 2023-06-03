@@ -6,7 +6,7 @@ public class MainMenuButtonManager : MonoBehaviour
 
     public Button startButton;
     public Button lvlButton;
-    public Button exitButton;
+    //public Button exitButton;
 
 
     private void Awake() {
@@ -19,9 +19,9 @@ public class MainMenuButtonManager : MonoBehaviour
         });
 
 
-        exitButton.onClick.AddListener(() => {
-            Application.Quit();
-        });
+        //exitButton.onClick.AddListener(() => {
+            //Application.Quit();
+        //});
 
     }
 }
