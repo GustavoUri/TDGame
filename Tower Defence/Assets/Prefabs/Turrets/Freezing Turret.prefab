@@ -107,6 +107,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1225041105758504463}
   - component: {fileID: 8241150462343692189}
+  - component: {fileID: -3745990251448420578}
   m_Layer: 0
   m_Name: Freezing Turret
   m_TagString: Turret
@@ -156,6 +157,18 @@ MonoBehaviour:
   <TargetTag>k__BackingField: Enemy
   <FreezingTime>k__BackingField: 2
   <FreezingRatio>k__BackingField: 2
+--- !u!114 &-3745990251448420578
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1225041105758504461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ead2763b7dae5f4a8cfea1befa38e99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1225041106901899239
 GameObject:
   m_ObjectHideFlags: 0

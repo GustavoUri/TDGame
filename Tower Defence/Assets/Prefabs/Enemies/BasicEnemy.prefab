@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1120840014123494407}
   - component: {fileID: 1120840014123494404}
   - component: {fileID: -7080679246048908894}
+  - component: {fileID: -8516333489022564598}
   m_Layer: 0
   m_Name: BasicEnemy
   m_TagString: Enemy
@@ -117,7 +118,7 @@ MonoBehaviour:
   <Speed>k__BackingField: 5
   <SpeedAfter>k__BackingField: 5
   <MaxHealth>k__BackingField: 100
-  tower: {fileID: 0}
+  <Tower>k__BackingField: {fileID: 0}
   <EndPosition>k__BackingField: {x: 0, y: 0, z: 0}
 --- !u!195 &-7080679246048908894
 NavMeshAgent:
@@ -141,6 +142,18 @@ NavMeshAgent:
   m_BaseOffset: 0.5
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
+--- !u!114 &-8516333489022564598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1120840014123494405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92d3ea1b689e2194f84dfc639090b9a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &3615164179415559484
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -151,6 +164,10 @@ PrefabInstance:
     - target: {fileID: 2522101038476975383, guid: 7fc07cfd138e3854f8b6b9ca984907e0, type: 3}
       propertyPath: m_Name
       value: HealthBar Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 2831668105100044432, guid: 7fc07cfd138e3854f8b6b9ca984907e0, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6572344190092355231, guid: 7fc07cfd138e3854f8b6b9ca984907e0, type: 3}
       propertyPath: m_Pivot.x

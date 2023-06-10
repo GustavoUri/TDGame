@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6477145078148386579}
   - component: {fileID: 6477145078148386578}
   - component: {fileID: 6477145078148386581}
+  - component: {fileID: 2117307935610303597}
   m_Layer: 0
   m_Name: MineEnemy
   m_TagString: Untagged
@@ -141,6 +142,18 @@ MonoBehaviour:
   <MaxHealth>k__BackingField: 300
   <Tower>k__BackingField: {fileID: 0}
   <EndPosition>k__BackingField: {x: 0, y: 0, z: 0}
+--- !u!114 &2117307935610303597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6477145078148386580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 92d3ea1b689e2194f84dfc639090b9a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &6695986722711409868
 PrefabInstance:
   m_ObjectHideFlags: 0

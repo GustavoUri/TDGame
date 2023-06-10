@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 4302636874369959328}
   - component: {fileID: 4483291781090223636}
   - component: {fileID: 4565083343931833045}
+  - component: {fileID: 4735508166334591514}
   m_Layer: 0
   m_Name: Artillery Bullet
   m_TagString: Bullet
@@ -127,5 +128,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 539d6de31ab44e3083dcd42f9e98c32e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  explosionRange: 6
   enemyTag: Enemy
+--- !u!114 &4735508166334591514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3093257637798676299}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17c5feb875a74d54dab786169fe7f102, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

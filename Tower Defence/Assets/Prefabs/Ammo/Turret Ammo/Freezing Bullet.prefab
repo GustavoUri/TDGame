@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1989292148033133217}
   - component: {fileID: 2169241630062885141}
   - component: {fileID: 1685043141987533764}
+  - component: {fileID: -9152174860373792416}
   m_Layer: 0
   m_Name: Freezing Bullet
   m_TagString: Bullet
@@ -125,5 +126,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0cae51829e9e411ca4ee96641a08ac39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-9152174860373792416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 774652899323910218}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17c5feb875a74d54dab786169fe7f102, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

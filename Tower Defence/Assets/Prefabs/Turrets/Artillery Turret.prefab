@@ -138,6 +138,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7255560793760615861}
   - component: {fileID: 7745342985664395332}
+  - component: {fileID: -8395486479670424806}
   m_Layer: 0
   m_Name: Artillery Turret
   m_TagString: Turret
@@ -186,6 +187,18 @@ MonoBehaviour:
   <FireRate>k__BackingField: 2
   <TargetTag>k__BackingField: Enemy
   <ExplosionRange>k__BackingField: 20
+--- !u!114 &-8395486479670424806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7255560793760615863}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ead2763b7dae5f4a8cfea1befa38e99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7255560794686168157
 GameObject:
   m_ObjectHideFlags: 0
