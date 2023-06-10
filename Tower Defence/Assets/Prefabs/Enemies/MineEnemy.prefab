@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 6477145078148386579}
   - component: {fileID: 6477145078148386578}
   - component: {fileID: 6477145078148386581}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: MineEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -151,6 +151,14 @@ PrefabInstance:
     - target: {fileID: 2522101038476975383, guid: 7fc07cfd138e3854f8b6b9ca984907e0, type: 3}
       propertyPath: m_Name
       value: HealthBar Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522101038476975383, guid: 7fc07cfd138e3854f8b6b9ca984907e0, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5253258616756369322, guid: 7fc07cfd138e3854f8b6b9ca984907e0, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6572344190092355231, guid: 7fc07cfd138e3854f8b6b9ca984907e0, type: 3}
       propertyPath: m_Pivot.x

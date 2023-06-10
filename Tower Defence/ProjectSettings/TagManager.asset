@@ -11,11 +11,12 @@ TagManager:
   - MainTower
   - Bullet
   - Turret
+  - Terrain
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - CameraRaycast
   - Water
   - UI
   - 
