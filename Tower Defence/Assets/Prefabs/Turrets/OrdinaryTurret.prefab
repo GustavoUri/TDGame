@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6306179746226247208}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bullet Shooting Place
   m_TagString: ShootingPlace
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 8921556664879605681}
   - component: {fileID: 8921556664879605680}
   - component: {fileID: 8921556664879605683}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Turret Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -140,7 +140,7 @@ GameObject:
   - component: {fileID: 8921556665441541741}
   - component: {fileID: 8921556665441541740}
   - component: {fileID: 8921556665441541743}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TurretMainPart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -235,7 +235,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8921556665832420957}
   - component: {fileID: 2579507657520181440}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: OrdinaryTurret
   m_TagString: Turret
   m_Icon: {fileID: 0}
@@ -282,3 +282,5 @@ MonoBehaviour:
   <Range>k__BackingField: 10
   <FireRate>k__BackingField: 1
   <TargetTag>k__BackingField: Enemy
+  <InstantiationRange>k__BackingField: 0
+  <InstantiationModel>k__BackingField: {fileID: 8062008069330731145, guid: 74d14c9961bd1ef429d4cebda98c114a, type: 3}

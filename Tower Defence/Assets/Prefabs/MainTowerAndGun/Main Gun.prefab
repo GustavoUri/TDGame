@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8899605847629100761}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ShootingPlace
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 6203591773594318244}
   - component: {fileID: 6203591773594318247}
   - component: {fileID: 6203591773594318246}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GunMainPart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -138,7 +138,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6203591773853691105}
   - component: {fileID: 6203591773853691104}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Main Gun
   m_TagString: MainGun
   m_Icon: {fileID: 0}
@@ -175,11 +175,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd6fee72c07420248b19b5590abc13c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isMainGunRotating: 0
-  turnSpeed: 5
+  <IsMainGunRotating>k__BackingField: 0
   bulletPrefab: {fileID: 2551051189578249582, guid: 32fe725fde31ebc49a7e71dc2c32f9a5, type: 3}
   bulletShootPos: {fileID: 8899605847629100761}
-  <ProjectileSpeed>k__BackingField: 20
+  <ProjectileSpeed>k__BackingField: 100
   <ProjectileDamage>k__BackingField: 20
   <Price>k__BackingField: 200
 --- !u!1 &6203591774716178943
@@ -194,7 +193,7 @@ GameObject:
   - component: {fileID: 6203591774716178931}
   - component: {fileID: 6203591774716178930}
   - component: {fileID: 6203591774716178941}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Weapon Barrel
   m_TagString: ShootingPlace
   m_Icon: {fileID: 0}

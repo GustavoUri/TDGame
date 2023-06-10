@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4917221950866287152}
   - component: {fileID: 1486342053444903991}
   - component: {fileID: -1106742637354380547}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ImprovedEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -151,6 +151,14 @@ PrefabInstance:
     - target: {fileID: 2522101038476975383, guid: 7fc07cfd138e3854f8b6b9ca984907e0, type: 3}
       propertyPath: m_Name
       value: HealthBar Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 2522101038476975383, guid: 7fc07cfd138e3854f8b6b9ca984907e0, type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5253258616756369322, guid: 7fc07cfd138e3854f8b6b9ca984907e0, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6572344190092355231, guid: 7fc07cfd138e3854f8b6b9ca984907e0, type: 3}
       propertyPath: m_Pivot.x

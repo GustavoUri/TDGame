@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2635508015870040888}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tower Area
   m_TagString: Untagged
   m_Icon: {fileID: 0}
