@@ -154,6 +154,7 @@ MonoBehaviour:
   <Range>k__BackingField: 20
   <FireRate>k__BackingField: 2
   <TargetTag>k__BackingField: Enemy
+  <InstantiationRange>k__BackingField: 0
   <FreezingTime>k__BackingField: 2
   <FreezingRatio>k__BackingField: 2
 --- !u!1 &1225041106901899239

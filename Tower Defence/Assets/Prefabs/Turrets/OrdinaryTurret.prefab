@@ -283,4 +283,3 @@ MonoBehaviour:
   <FireRate>k__BackingField: 1
   <TargetTag>k__BackingField: Enemy
   <InstantiationRange>k__BackingField: 0
-  <InstantiationModel>k__BackingField: {fileID: 8062008069330731145, guid: 74d14c9961bd1ef429d4cebda98c114a, type: 3}

@@ -12,6 +12,5 @@ namespace Turrets.Interfaces
         string TargetTag { get; }
         
         float InstantiationRange { get; }
-        GameObject InstantiationModel { get; }
     }
 }

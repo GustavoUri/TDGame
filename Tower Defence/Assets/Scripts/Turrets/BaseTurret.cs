@@ -17,7 +17,6 @@ public class BaseTurret : MonoBehaviour, ITurret
     [field: SerializeField] public string TargetTag { get; protected set; }
 
     [field: SerializeField] public float InstantiationRange { get; protected set; }
-    [field: SerializeField] public GameObject InstantiationModel { get; protected set; }
 
     void Start()
     {

@@ -185,6 +185,7 @@ MonoBehaviour:
   <Range>k__BackingField: 15
   <FireRate>k__BackingField: 2
   <TargetTag>k__BackingField: Enemy
+  <InstantiationRange>k__BackingField: 0
   <ExplosionRange>k__BackingField: 20
 --- !u!1 &7255560794686168157
 GameObject:
