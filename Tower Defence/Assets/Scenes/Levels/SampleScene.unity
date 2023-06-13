@@ -34185,6 +34185,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 7903172565236839874, guid: 48a25c4bb3630e343ade4da50339d2e4, type: 3}
+      propertyPath: ordinaryTurret
+      value: 
+      objectReference: {fileID: 5871654773823939472, guid: 2e69625df9b6687459b4e6a7116cca1e, type: 3}
+    - target: {fileID: 7903172565236839874, guid: 48a25c4bb3630e343ade4da50339d2e4, type: 3}
       propertyPath: mouseRaycastLayer
       value: 3
       objectReference: {fileID: 0}

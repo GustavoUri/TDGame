@@ -31,9 +31,11 @@ public class TurretInstantiator : MonoBehaviour
     private GameObject _instantiatedCircle;
     private Renderer _circleRenderer;
     private BaseTurret _instantiatedModelScript;
+
     void Start()
     {
-        _obstructiveObjects = FindObjectsOfType<GameObject>().Where(gameObject => !gameObject.CompareTag("Terrain")).ToList();
+        _obstructiveObjects = FindObjectsOfType<GameObject>().Where(gameObject => !gameObject.CompareTag("Terrain"))
+            .ToList();
         _camScript = Camera.main.gameObject.GetComponent<CameraMovement>();
         InitializeInstantiationModels();
     }
