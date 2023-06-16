@@ -14,8 +14,10 @@ public class WaveManager : MonoBehaviour
     }
 
     [System.Serializable] public class wavePart{
+        [Range(0,60)]public float timeBetweenEnemy;
         [Range(0,100)]public int count;
         public GameObject enemy;
+        public Transform spawnPoint;
     }
     [SerializeField] private List<SubList> Waves;
     // Start is called before the first frame update
@@ -28,7 +30,7 @@ public class WaveManager : MonoBehaviour
     private IEnumerator WavesSpawner(List<SubList> waves){
         for(int i = 0; i <waves.Count;i++){
             yield return new WaitForSeconds(waves[i].waitTimeAfterWave);
-            //StartCoroutine(WaveSpawner(waves[i].Wave,waves[i].timeBetween,waves[i].spawnPoint.position));
+            
             yield return StartCoroutine(WaveSpawner(waves[i].Wave,waves[i].timeBetween,waves[i].spawnPoint.position));
             
             yield return StartCoroutine(WaitEndWave());
@@ -41,7 +43,12 @@ public class WaveManager : MonoBehaviour
         for(int i = 0; i<wave.Count;i++){
             yield return new WaitForSeconds(timeBetween);
             for(int k =0;k<wave[i].count;k++){
-                EnemySpawner(wave[i].enemy,spawnPoint);
+                if(wave[i].spawnPoint == null){
+                    EnemySpawner(wave[i].enemy,spawnPoint);
+                }else{
+                    EnemySpawner(wave[i].enemy,wave[i].spawnPoint.position);
+                }
+                yield return new WaitForSeconds(wave[i].timeBetweenEnemy);
             }
         }
     }
