@@ -12,6 +12,11 @@ TagManager:
   - Bullet
   - Turret
   - Terrain
+  - OrdinaryTurretButton
+  - FreezingTurretButton
+  - ArtilleryTurretButton
+  - SniperTurretButton
+  - TurretDeleteButton
   layers:
   - Default
   - TransparentFX

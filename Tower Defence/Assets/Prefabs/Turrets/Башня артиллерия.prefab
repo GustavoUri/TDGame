@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 4599925968839671615}
   - component: {fileID: 1807541128695530931}
   - component: {fileID: 985918226720790469}
+  - component: {fileID: -354131216403532108}
   m_Layer: 0
   m_Name: "\u0411\u0430\u0448\u043D\u044F \u0430\u0440\u0442\u0438\u043B\u043B\u0435\u0440\u0438\u044F"
-  m_TagString: Untagged
+  m_TagString: Turret
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -111,6 +112,19 @@ MonoBehaviour:
   <TargetTag>k__BackingField: Enemy
   <InstantiationRange>k__BackingField: 20
   <ExplosionRange>k__BackingField: 5
+--- !u!65 &-354131216403532108
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 105452426850577762}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.0176198, y: 6.3098755, z: 2.9849272}
+  m_Center: {x: -0.004838109, y: 3.0184064, z: 0.014342904}
 --- !u!1 &5317139696123175634
 GameObject:
   m_ObjectHideFlags: 0

@@ -202,9 +202,10 @@ GameObject:
   - component: {fileID: 7504255726914121014}
   - component: {fileID: 403111337175821148}
   - component: {fileID: 4757830005834893397}
+  - component: {fileID: 1833899679607131618}
   m_Layer: 0
   m_Name: "\u0411\u0430\u0448\u043D\u044F \u043E\u0431\u044B\u0447\u043D\u0430\u044F"
-  m_TagString: Untagged
+  m_TagString: Turret
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -301,13 +302,26 @@ MonoBehaviour:
   <BulletPrefab>k__BackingField: {fileID: 2628850132464238609, guid: 0ff0af6dd579bf345a6c375525afd994, type: 3}
   <TurnSpeed>k__BackingField: 5
   <BulletShootPos>k__BackingField: {fileID: 4568288838969302183}
-  <Price>k__BackingField: 100
+  <Price>k__BackingField: 10
   <ProjectileSpeed>k__BackingField: 20
   <ProjectileDamage>k__BackingField: 20
   <Range>k__BackingField: 10
   <FireRate>k__BackingField: 1
   <TargetTag>k__BackingField: Enemy
   <InstantiationRange>k__BackingField: 10
+--- !u!65 &1833899679607131618
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8033586185098501389}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.9539982, y: 6.186527, z: 2.0094159}
+  m_Center: {x: 0.026609547, y: 2.8757038, z: 0.0036275983}
 --- !u!1 &8514384477156402907
 GameObject:
   m_ObjectHideFlags: 0
