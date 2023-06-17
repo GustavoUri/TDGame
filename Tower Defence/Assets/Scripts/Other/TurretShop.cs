@@ -168,6 +168,7 @@ public class TurretShop : MonoBehaviour
 
     private void InstantiatePrefab()
     {
+        if (_towerScript.Health - _healthDamageForMainTower < 0) return;
         var turret = Instantiate(_instantiationPrefab, _mousePosition, new Quaternion());
         _towerScript.GetDamage(_healthDamageForMainTower, turret.tag);
         _obstructiveObjects.Add(turret);

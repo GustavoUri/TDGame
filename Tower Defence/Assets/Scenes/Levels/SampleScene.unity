@@ -16833,15 +16833,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ordinaryTurret: {fileID: 8033586185098501389, guid: 2e69625df9b6687459b4e6a7116cca1e, type: 3}
-  freezingTurret: {fileID: 1225041105758504461, guid: c00b46b49a49c6947bb79571a3e161ab, type: 3}
-  artilleryTurret: {fileID: 7255560793760615863, guid: 321b765077f9be94789b63ff658459e6, type: 3}
-  sniperTurret: {fileID: 7498681042895925196, guid: 06505f8d1e355f644b8949165ea9c470, type: 3}
+  freezingTurret: {fileID: 8410730936670239632, guid: e9ce7296974454b4388a0d7c2704e8b7, type: 3}
+  artilleryTurret: {fileID: 105452426850577762, guid: 585f804cc4cc8124ca7192b577af14b6, type: 3}
+  sniperTurret: {fileID: 6060584216308174440, guid: 4c39c7000e99a8549ad5a1b4bea6260e, type: 3}
   turretModelCircle: {fileID: 765879813970244417, guid: 6515a77efb5703741b046f6bd4ede1de, type: 3}
   instantiatedModelOkColor: {r: 1, g: 1, b: 1, a: 0}
   instantiatedModelBadColor: {r: 1, g: 0, b: 0, a: 0}
   raycastLayerForInstantiating: 3
   raycastLayerForEditing: 0
-  turretEditor: {fileID: 3301185235112754967, guid: d3eb1427228c8c74ba39d68dd6f8822a, type: 3}
 --- !u!1001 &1050022760
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -33100,7 +33099,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1930607978529751917, guid: 5da71653a1071704da347676752f56cd, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1930607978529751918, guid: 5da71653a1071704da347676752f56cd, type: 3}
       propertyPath: m_Enabled
