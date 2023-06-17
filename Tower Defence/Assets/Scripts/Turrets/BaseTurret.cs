@@ -4,17 +4,19 @@ using UnityEngine;
 
 public class BaseTurret : MonoBehaviour, ITurret
 {
-    [field:SerializeField] public Transform Target { get; protected set; }
-    [field:SerializeField] public GameObject BulletPrefab { get; protected set; }
-    [field:SerializeField] public float TurnSpeed { get; protected set; }
-    [field:SerializeField] public Transform BulletShootPos { get; protected set; }
+    [field: SerializeField] public Transform Target { get; protected set; }
+    [field: SerializeField] public GameObject BulletPrefab { get; protected set; }
+    [field: SerializeField] public float TurnSpeed { get; protected set; }
+    [field: SerializeField] public Transform BulletShootPos { get; protected set; }
     private float _timeBeforeShoot;
-    [field:SerializeField]public int Price { get; protected set; }
-    [field:SerializeField]public float ProjectileSpeed { get; protected set; }
-    [field:SerializeField]public int ProjectileDamage { get; protected set; }
-    [field:SerializeField]public int Range { get; protected set; }
-    [field:SerializeField]public float FireRate { get; protected set; }
-    [field:SerializeField]public string TargetTag { get; protected set; }
+    [field: SerializeField] public int Price { get; protected set; }
+    [field: SerializeField] public float ProjectileSpeed { get; protected set; }
+    [field: SerializeField] public int ProjectileDamage { get; protected set; }
+    [field: SerializeField] public int Range { get; protected set; }
+    [field: SerializeField] public float FireRate { get; protected set; }
+    [field: SerializeField] public string TargetTag { get; protected set; }
+
+    [field: SerializeField] public float InstantiationRange { get; protected set; }
 
     void Start()
     {
@@ -61,7 +63,7 @@ public class BaseTurret : MonoBehaviour, ITurret
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(transform.position, Range);
     }
-    
+
 
     protected virtual void Shoot()
     {
@@ -80,5 +82,4 @@ public class BaseTurret : MonoBehaviour, ITurret
 
         _timeBeforeShoot -= Time.deltaTime;
     }
-    
 }

@@ -1,4 +1,6 @@
+using System;
 using Interfaces;
+using Other;
 using UnityEngine;
 
 public class BaseMainGun : MonoBehaviour, IMainGun
@@ -11,23 +13,20 @@ public class BaseMainGun : MonoBehaviour, IMainGun
     [field: SerializeField] public int ProjectileDamage { get; protected set; }
     [field: SerializeField] public int Price { get; protected set; }
     public Vector3 Target { get; protected set; }
+    private CameraMovement _cameraScript;
+
+    private void Start()
+    {
+        _cameraScript = Camera.main.GetComponent<CameraMovement>();
+    }
 
     void Update()
     {
-        if (Input.GetKeyUp("space"))
-        {
-            IsMainGunRotating = !IsMainGunRotating;
-        }
 
-        if (IsMainGunRotating)
+        if (_cameraScript.cameraState == CameraViewState.ShopView)
             return;
-        var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out _hit))
-        {
-            Target = _hit.point;
-        }
 
-
+        Target = _cameraScript.ScopePosition;
         Rotate();
         if (Input.GetMouseButtonUp(0))
         {

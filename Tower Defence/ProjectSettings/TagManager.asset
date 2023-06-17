@@ -11,11 +11,17 @@ TagManager:
   - MainTower
   - Bullet
   - Turret
+  - Terrain
+  - OrdinaryTurretButton
+  - FreezingTurretButton
+  - ArtilleryTurretButton
+  - SniperTurretButton
+  - TurretDeleteButton
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - CameraRaycast
   - Water
   - UI
   - 

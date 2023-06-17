@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4925560546606305211}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Bullet Shooting Place
   m_TagString: ShootingPlace
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 7498681041962090018}
   - component: {fileID: 7498681041962090019}
   - component: {fileID: 7498681041962090016}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Turret Barrel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -138,8 +138,12 @@ GameObject:
   m_Component:
   - component: {fileID: 7498681042895925198}
   - component: {fileID: 1733184201808530465}
+<<<<<<< HEAD
   - component: {fileID: -5788933692987695157}
   m_Layer: 0
+=======
+  m_Layer: 2
+>>>>>>> main
   m_Name: Sniper Turret
   m_TagString: Turret
   m_Icon: {fileID: 0}
@@ -186,6 +190,7 @@ MonoBehaviour:
   <Range>k__BackingField: 25
   <FireRate>k__BackingField: 5
   <TargetTag>k__BackingField: Enemy
+<<<<<<< HEAD
 --- !u!114 &-5788933692987695157
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -198,6 +203,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ead2763b7dae5f4a8cfea1befa38e99, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+=======
+  <InstantiationRange>k__BackingField: 0
+>>>>>>> main
 --- !u!1 &7498681043547359106
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,7 +218,7 @@ GameObject:
   - component: {fileID: 7498681043547359230}
   - component: {fileID: 7498681043547359231}
   - component: {fileID: 7498681043547359228}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: TurretMainPart
   m_TagString: Untagged
   m_Icon: {fileID: 0}

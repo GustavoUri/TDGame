@@ -1,4 +1,6 @@
-﻿namespace Turrets.Interfaces
+﻿using UnityEngine;
+
+namespace Turrets.Interfaces
 {
     public interface ITurret
     {
@@ -8,5 +10,7 @@
         int Range { get; }
         float FireRate { get; }
         string TargetTag { get; }
+        
+        float InstantiationRange { get; }
     }
 }
