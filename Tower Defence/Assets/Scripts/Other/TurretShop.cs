@@ -134,24 +134,29 @@ public class TurretShop : MonoBehaviour
         }
     }
 
+    private void OnDisable()
+    {
+        RemoveInstantiatedModel();
+    }
+
+
+    private void DeleteTurret()
+    {
+        var turret = _turretHit.collider.gameObject;
+        _obstructiveObjects.Remove(turret);
+        var script = turret.GetComponent<BaseTurret>();
+        _towerScript.Heal(script.Price);
+        Destroy(turret);
+    }
     // Update is called once per frame
     void Update()
     {
-        if (_camScript.cameraState == CameraViewState.ShootingView)
-        {
-            RemoveInstantiatedModel();
-            return;
-        }
-
         GetMousePosition();
         CheckKeyboardNumbersPressed();
+        
         if (_isAbleToDeleteTurrets && CheckIfTurretOnPosition() && Input.GetMouseButtonUp(0))
         {
-            var turret = _turretHit.collider.gameObject;
-            _obstructiveObjects.Remove(turret);
-            var script = turret.GetComponent<BaseTurret>();
-            _towerScript.Heal(script.Price);
-            Destroy(turret);
+            DeleteTurret();
         }
 
 
