@@ -128,7 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f09fa3a916af42dca45990eb84aa4dbd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< Updated upstream
+  bulletEffect: {fileID: 4584737516149031693, guid: e29dfd071928f634e98af4d58252acd3, type: 3}
 --- !u!114 &7056184170426389606
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,6 +141,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17c5feb875a74d54dab786169fe7f102, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-=======
-  bulletEffect: {fileID: 4584737516149031693, guid: e29dfd071928f634e98af4d58252acd3, type: 3}
->>>>>>> Stashed changes
