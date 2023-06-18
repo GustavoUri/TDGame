@@ -4,6 +4,7 @@ using UnityEngine;
 public class ArtilleryTurretProjectile : BaseTurretProjectile
 {
     public float ExplosionRange { get; protected set; }
+
     [SerializeField] private string enemyTag = "Enemy";
 
     private void OnTriggerEnter(Collider other)
@@ -18,6 +19,9 @@ public class ArtilleryTurretProjectile : BaseTurretProjectile
             var enemyScript = enemy.GetComponent<IDamageable>();
             enemyScript.GetDamage(Damage, gameObject.tag);
         }
+
+        GameObject effect = (GameObject)(Instantiate(bulletEffect,transform.position,transform.rotation));
+        Destroy(effect,1f);
 
         Destroy(gameObject);
     }

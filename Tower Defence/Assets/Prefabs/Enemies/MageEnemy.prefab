@@ -70,7 +70,7 @@ MonoBehaviour:
   <Tower>k__BackingField: {fileID: 0}
   <EndPosition>k__BackingField: {x: 0, y: 0, z: 0}
   <DamageWhileRunning>k__BackingField: 2
-  <DamageRate>k__BackingField: 1
+  <DamageRate>k__BackingField: 2
 --- !u!23 &1960722267225770939
 MeshRenderer:
   m_ObjectHideFlags: 0

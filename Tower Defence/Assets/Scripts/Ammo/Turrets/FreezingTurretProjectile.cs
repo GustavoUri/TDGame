@@ -12,6 +12,10 @@ public class FreezingTurretProjectile : BaseTurretProjectile
         var otherFreezable = other.GetComponent<IFreezable>();
         otherDamageable?.GetDamage(Damage, gameObject.tag);
         otherFreezable?.GetFreeze(FreezingTime, FreezingRatio, gameObject.tag);
+
+        GameObject effect = (GameObject)(Instantiate(bulletEffect,transform.position,transform.rotation));
+        Destroy(effect,1f);
+
         Destroy(gameObject);
     }
 

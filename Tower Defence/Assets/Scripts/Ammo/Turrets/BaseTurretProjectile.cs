@@ -9,6 +9,8 @@ public class BaseTurretProjectile : MonoBehaviour, IProjectile
     public Transform Target { get; protected set; }
     protected Vector3 TargetPosition { get; set; }
 
+    public GameObject bulletEffect;
+
     public void InitializeProps(float speed, int damage, Transform target)
     {
         Speed = speed;
@@ -33,6 +35,11 @@ public class BaseTurretProjectile : MonoBehaviour, IProjectile
     {
         var otherDamageable = other.GetComponent<IDamageable>();
         otherDamageable?.GetDamage(Damage, gameObject.tag);
+
+        GameObject effect = (GameObject)(Instantiate(bulletEffect,transform.position,transform.rotation));
+        effect.GetComponent<Renderer>().material.color = other.GetComponent<Renderer>().material.color;
+        Destroy(effect,1f);
+
         Destroy(gameObject);
     }
 

@@ -9,6 +9,8 @@ public class BaseMainGunProjectile : MonoBehaviour, IProjectile
     public Vector3 TargetPosition { get; private set; }
     private Vector3 Direction { get; set; }
 
+    public GameObject bulletEffect;
+
     public virtual void InitializeProps(float speed, int damage, Vector3 targetPosition)
     {
         Speed = speed;
@@ -33,6 +35,10 @@ public class BaseMainGunProjectile : MonoBehaviour, IProjectile
     {
         var otherDamageable = other.GetComponent<IDamageable>();
         otherDamageable?.GetDamage(Damage, gameObject.tag);
+
+        GameObject effect = (GameObject)(Instantiate(bulletEffect,transform.position,transform.rotation));
+        Destroy(effect,1f);
+
         Destroy(gameObject);
     }
 
