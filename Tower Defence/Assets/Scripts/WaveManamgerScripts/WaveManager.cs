@@ -17,6 +17,9 @@ public class WaveManager : MonoBehaviour
     }
 
     [System.Serializable] public class wavePart{
+
+        public string ElementName;
+        [Range(-1,60)]public float waitTime = -1;
         [Range(0,60)]public float timeBetweenEnemy;
         [Range(0,100)]public int count;
         public GameObject enemy;
@@ -45,7 +48,10 @@ public class WaveManager : MonoBehaviour
     }
     private IEnumerator WaveSpawner(List<wavePart> wave,float timeBetween,Vector3 spawnPoint){
         for(int i = 0; i<wave.Count;i++){
-            yield return new WaitForSeconds(timeBetween);
+            if(wave[i].waitTime == -1)
+                yield return new WaitForSeconds(timeBetween);
+            else
+                yield return new WaitForSeconds(wave[i].waitTime);
             for(int k =0;k<wave[i].count;k++){
                 if(wave[i].spawnPoint == null){
                     EnemySpawner(wave[i].enemy,spawnPoint);

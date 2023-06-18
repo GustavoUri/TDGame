@@ -35,6 +35,7 @@ public class TurretShop : MonoBehaviour
     private KeyboardButtonsToShopButtons _keyboardButtons;
     private MainTower _towerScript;
     private int _healthDamageForMainTower;
+    private bool _possibleToInstantiate;
 
     private void Awake()
     {
@@ -133,34 +134,42 @@ public class TurretShop : MonoBehaviour
         }
     }
 
+    private void OnDisable()
+    {
+        RemoveInstantiatedModel();
+    }
+
+
+    private void DeleteTurret()
+    {
+        var turret = _turretHit.collider.gameObject;
+        _obstructiveObjects.Remove(turret);
+        var script = turret.GetComponent<BaseTurret>();
+        _towerScript.Heal(script.Price);
+        Destroy(turret);
+    }
     // Update is called once per frame
     void Update()
     {
+        GetMousePosition();
         CheckKeyboardNumbersPressed();
+        
         if (_isAbleToDeleteTurrets && CheckIfTurretOnPosition() && Input.GetMouseButtonUp(0))
         {
-            _obstructiveObjects.Remove(_turretHit.collider.gameObject);
-            Destroy(_turretHit.collider.gameObject);
+            DeleteTurret();
         }
-
-        if (_camScript.cameraState == CameraViewState.ShootingView)
-        {
-            RemoveInstantiatedModel();
-            return;
-        }
-
-        GetMousePosition();
 
 
         if (_instantiatedModel != null)
         {
+            CheckPossibilityToInstantiate();
             MoveInstantiatedModel();
         }
 
 
         if (Input.GetMouseButtonUp(0) &&
             !EventSystem.current.IsPointerOverGameObject() &&
-            _instantiationPrefab != null)
+            _instantiationPrefab != null && _possibleToInstantiate)
         {
             InstantiatePrefab();
         }
@@ -168,6 +177,7 @@ public class TurretShop : MonoBehaviour
 
     private void InstantiatePrefab()
     {
+        if (_towerScript.Health - _healthDamageForMainTower < 0) return;
         var turret = Instantiate(_instantiationPrefab, _mousePosition, new Quaternion());
         _towerScript.GetDamage(_healthDamageForMainTower, turret.tag);
         _obstructiveObjects.Add(turret);
@@ -177,7 +187,7 @@ public class TurretShop : MonoBehaviour
     {
         _instantiatedModel.transform.position = _mousePosition;
         _instantiatedCircle.transform.position = _mousePosition;
-        if (CheckPossibilityToInstantiate())
+        if (_possibleToInstantiate)
         {
             _modelRenderer.material.color = instantiatedModelOkColor;
             _circleRenderer.material.color = instantiatedModelOkColor;
@@ -203,11 +213,11 @@ public class TurretShop : MonoBehaviour
         _circleRenderer = _instantiatedCircle.GetComponent<Renderer>();
     }
 
-    private bool CheckPossibilityToInstantiate()
+    private void CheckPossibilityToInstantiate()
     {
         var isEnoughSpace = !_obstructiveObjects.Any(gameObject =>
             Vector3.Distance(gameObject.transform.position, _instantiatedModel.transform.position) <= 5);
-        return isEnoughSpace && _hit.collider.CompareTag("Terrain");
+        _possibleToInstantiate = isEnoughSpace && _hit.collider.CompareTag("Terrain");
     }
 
     private bool CheckIfTurretOnPosition()
