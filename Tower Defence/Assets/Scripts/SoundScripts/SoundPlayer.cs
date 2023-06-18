@@ -25,57 +25,45 @@ public class SoundPlayer: MonoBehaviour
 
     private AudioSource backgroundPlayer;
 
-    public static void ReverseSound() {
-        if (GameState.isSoundAccitve)
-        {
-            GameState.isSoundAccitve = false;
-            singltonSoundPlayer.backgroundPlayer.Pause();
-        }
-        else {
-            GameState.isSoundAccitve = true;
-            singltonSoundPlayer.backgroundPlayer.Play();
-        }
-    }
 
 
-    private void Awake() {
+
+    private void Start() {
         singltonSoundPlayer = this;
         backgroundPlayer = GetComponent<AudioSource>();
-        if (GameState.isSoundAccitve) { singltonSoundPlayer.backgroundPlayer.Play(); }
-        else
-        { singltonSoundPlayer.backgroundPlayer.Pause(); }
+        backgroundPlayer.Play();
     }
 
 
     public static void PlayShoutSound(GameObject volumeSourse) {
-        if (GameState.isSoundAccitve && !GameState.isSceneEnd) AudioSource.PlayClipAtPoint(singltonSoundPlayer.shotSound[0], volumeSourse.transform.position);
+        AudioSource.PlayClipAtPoint(singltonSoundPlayer.shotSound[0], volumeSourse.transform.position);
     }
 
 
     public static void PlayHitSound(GameObject volumeSourse)
     {
-        if (GameState.isSoundAccitve && !GameState.isSceneEnd) AudioSource.PlayClipAtPoint(singltonSoundPlayer.hitEnemySound[0], volumeSourse.transform.position);
+        AudioSource.PlayClipAtPoint(singltonSoundPlayer.hitEnemySound[0], volumeSourse.transform.position);
     }
 
 
     public static void PlayDeathSound(GameObject volumeSourse)
     {
-        if (GameState.isSoundAccitve && !GameState.isSceneEnd) AudioSource.PlayClipAtPoint(singltonSoundPlayer.enemyDeathSound[0], volumeSourse.transform.position);
+        AudioSource.PlayClipAtPoint(singltonSoundPlayer.enemyDeathSound[0], volumeSourse.transform.position);
     }
 
     public static void PlaySpawnSound(GameObject volumeSourse)
     {
-        if (GameState.isSoundAccitve && !GameState.isSceneEnd) AudioSource.PlayClipAtPoint(singltonSoundPlayer.enemySpawnSound[0], volumeSourse.transform.position);
+        AudioSource.PlayClipAtPoint(singltonSoundPlayer.enemySpawnSound[0], volumeSourse.transform.position);
     }
 
     public static void PlayBuildSound(GameObject volumeSourse)
     {
-        if (GameState.isSoundAccitve && !GameState.isSceneEnd) AudioSource.PlayClipAtPoint(singltonSoundPlayer.towerCreateSound[0], volumeSourse.transform.position);
+        AudioSource.PlayClipAtPoint(singltonSoundPlayer.towerCreateSound[0], volumeSourse.transform.position);
     }
 
     public static void PlaySellSound(GameObject volumeSourse)
     {
-        if (GameState.isSoundAccitve && !GameState.isSceneEnd) AudioSource.PlayClipAtPoint(singltonSoundPlayer.turretSellSound[0], volumeSourse.transform.position);
+        AudioSource.PlayClipAtPoint(singltonSoundPlayer.turretSellSound[0], volumeSourse.transform.position);
     }
 
 

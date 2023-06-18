@@ -6,7 +6,6 @@ public class MainMenuButtonManager : MonoBehaviour
 
     public Button startButton;
     public Button lvlButton;
-    public Button soundButton;
     //public Button exitButton;
 
 
@@ -20,12 +19,8 @@ public class MainMenuButtonManager : MonoBehaviour
         });
 
 
-        soundButton.onClick.AddListener(() => {
-            SoundPlayer.ReverseSound();
-        });
-
         //exitButton.onClick.AddListener(() => {
-        //Application.Quit();
+            //Application.Quit();
         //});
 
     }

@@ -7,7 +7,6 @@ public class EscapeCall : MonoBehaviour
 {
     [SerializeField] private GameObject menuWindow;
     public Button continueButton;
-    public Button restartButton;
     public Button menuButton;
 
 
@@ -26,14 +25,13 @@ public class EscapeCall : MonoBehaviour
         });
 
         menuButton.onClick.AddListener(() => { Loader.Load(0, false); });
-        restartButton.onClick.AddListener(() => { Loader.Load(); });
     }
 
 
     // Update is called once per frame
     void Update()
     {
-        if (GameState.isSceneEnd || !Input.GetKeyUp(KeyCode.Escape)) return;
+        if (!Input.GetKeyUp(KeyCode.Escape)) return;
         if (menuWindow.activeSelf)
         {
             menuWindow.SetActive(false);
