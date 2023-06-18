@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class LvlEndManager : MonoBehaviour
 {
-
+    private int suspendCheck = 0;
     private GameObject mainTower;
     private MainTower mainTowerScript;
+
+    private GameObject waveMananager;
+    private WaveManager wave;
+
+
 
     [SerializeField] private GameObject winWindow;
     [SerializeField] private GameObject loseWindow;
@@ -19,6 +24,16 @@ public class LvlEndManager : MonoBehaviour
         if (mainTower != null) {
             mainTowerScript = mainTower.GetComponent<MainTower>();
         }
+
+        winWindow.SetActive(false);
+        waveMananager = GameObject.Find("WaveMananager");
+        if (waveMananager != null)
+        {
+            wave = waveMananager.GetComponent<WaveManager>();
+        }
+
+
+
     }
 
     // Update is called once per frame
@@ -30,6 +45,17 @@ public class LvlEndManager : MonoBehaviour
             GameState.PauseGame(true);
             loseWindow.SetActive(true);
         }
-
+        if (waveMananager == null || wave.isSpawnEnd)
+        {
+            if (suspendCheck == 60) {
+                suspendCheck = 0;
+                if (GameObject.FindWithTag("Enemy") == null) {
+                    GameState.isSceneEnd = true;
+                    GameState.PauseGame(true);
+                    winWindow.SetActive(true);
+                }
+            }
+            suspendCheck++;
+        }
     }
 }

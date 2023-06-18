@@ -5,6 +5,9 @@ using UnityEngine;
 public class WaveManager : MonoBehaviour
 {
 
+    public bool isSpawnEnd = false;
+
+
     [System.Serializable] public class SubList{
         public string WaveName;
         [Range(0,60)]public float waitTimeAfterWave;
@@ -23,8 +26,8 @@ public class WaveManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        isSpawnEnd = false;
         StartCoroutine(WavesSpawner(Waves));
-        
     }
 
     private IEnumerator WavesSpawner(List<SubList> waves){
@@ -37,7 +40,8 @@ public class WaveManager : MonoBehaviour
 
             
         }
-       
+        isSpawnEnd = true;
+
     }
     private IEnumerator WaveSpawner(List<wavePart> wave,float timeBetween,Vector3 spawnPoint){
         for(int i = 0; i<wave.Count;i++){
