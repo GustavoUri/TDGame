@@ -386,7 +386,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ab0077aad2d8b348b48040b9e455a65, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  winWindow: {fileID: 0}
+  winWindow: {fileID: 2195373628072744864}
   loseWindow: {fileID: 7565395585738750244}
 --- !u!1 &2195373628072744864
 GameObject:

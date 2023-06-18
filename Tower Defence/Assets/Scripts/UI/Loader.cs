@@ -4,8 +4,8 @@ using UnityEngine.SceneManagement;
 
 public static class Loader
 {
-    public static int numberOfLvl = 0;
-    private static string[] _lvls = {"SampleScene"};
+    public static int numberOfLvl = 1;
+    private static string[] _lvls = {"Level_1","SampleScene"};
     private static string[] _scenes = {"MainMenu", "LvlSelectScene"};
     private static string targetLvl = _lvls[0];
 
