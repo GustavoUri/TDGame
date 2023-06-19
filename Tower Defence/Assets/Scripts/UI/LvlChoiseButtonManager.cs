@@ -10,7 +10,7 @@ public class LvlChoiseButtonManager : MonoBehaviour
 
     private void Awake() {
         lvl1Button.onClick.AddListener(() => {
-            Loader.Load(0,true);
+            Loader.Load(2,true);
         });
 
         backButton.onClick.AddListener(() => {

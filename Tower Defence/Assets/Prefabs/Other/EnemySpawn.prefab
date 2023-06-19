@@ -46,4 +46,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 1120840014123494405, guid: 02b7fc483cef46f429cda89fe72a3a60, type: 3}
   countdown: 3
-  timeBetween: 2
+  timeBetween: 1
