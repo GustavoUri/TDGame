@@ -14,6 +14,7 @@ public static class Loader
         Time.timeScale = 1;
         GameState.isSceneEnd = true;
         SceneManager.LoadScene("LoadingScene");
+        GameState.isSceneEnd = false;
         if (islvlload)
         {
             targetLvl = i <= numberOfLvl ? _lvls[i] : _lvls[0];
@@ -21,7 +22,7 @@ public static class Loader
         }
         else
             SceneManager.LoadScene(_scenes[i]);
-        GameState.isSceneEnd = false;
+        
     }
 
     public static void Load()
@@ -29,8 +30,9 @@ public static class Loader
         GameState.isSceneEnd = true;
         Time.timeScale = 1;
         SceneManager.LoadScene("LoadingScene");
-        SceneManager.LoadScene(targetLvl);
         GameState.isSceneEnd = false;
+        SceneManager.LoadScene(targetLvl);
+        
     }
 
     public static void LoadNextLevel()
@@ -38,10 +40,10 @@ public static class Loader
         GameState.isSceneEnd = true;
         Time.timeScale = 1;
         SceneManager.LoadScene("LoadingScene");
+        GameState.isSceneEnd = false;
         int i = Array.IndexOf(_lvls, targetLvl) + 1;
         targetLvl = i + 1 <= numberOfLvl ? _lvls[i + 1] : "MainMenu";
-        SceneManager.LoadScene(targetLvl);
-        GameState.isSceneEnd = false;
+        SceneManager.LoadScene(targetLvl);      
     }
 
 }
