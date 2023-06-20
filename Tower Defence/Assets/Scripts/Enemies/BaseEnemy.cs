@@ -87,7 +87,9 @@ public class BaseEnemy : MonoBehaviour, IEnemy, IDamageable, IFreezable
 
     protected virtual void DestroyOnDistance()
     {
-        if (Vector3.Distance(transform.position, EndPosition) < 0.5 && FollowPosition == EndPosition)
+        var dist = Vector3.Distance(transform.position, EndPosition);
+        Debug.Log(dist);
+        if (dist < 1f && FollowPosition == EndPosition)
         {
             Destroy(gameObject);
         }

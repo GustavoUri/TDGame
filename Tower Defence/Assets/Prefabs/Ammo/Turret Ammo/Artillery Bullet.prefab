@@ -128,6 +128,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 539d6de31ab44e3083dcd42f9e98c32e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletEffect: {fileID: 4584737516149031693, guid: e29dfd071928f634e98af4d58252acd3, type: 3}
   enemyTag: Enemy
 --- !u!114 &4735508166334591514
 MonoBehaviour:

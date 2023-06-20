@@ -7,7 +7,7 @@ public class MainTower : MonoBehaviour, IMainTower, IDamageable
     [SerializeField] private MainTowerHealthBar bar;
     [field: SerializeField] public int Health { get; private set; }
     [field: SerializeField] public int MaxHealth { get; private set; }
-
+    public string lastHitter;
     private void Start()
     {
         bar.UpdateHealthBar(Health, MaxHealth);
@@ -17,8 +17,9 @@ public class MainTower : MonoBehaviour, IMainTower, IDamageable
     {
         Health -= damage;
         bar.UpdateHealthBar(Health, MaxHealth);
-        if(Health<=0)
-            Destroy(gameObject);
+        lastHitter = tagOfCaused;
+        // if(Health<=0)
+        //     Destroy(gameObject);
     }
 
     public void Heal(int health)

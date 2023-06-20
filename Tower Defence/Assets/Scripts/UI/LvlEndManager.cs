@@ -26,7 +26,7 @@ public class LvlEndManager : MonoBehaviour
         }
 
         winWindow.SetActive(false);
-        waveMananager = GameObject.Find("WaveMananager");
+        waveMananager = GameObject.Find("WaveManager");
         if (waveMananager != null)
         {
             wave = waveMananager.GetComponent<WaveManager>();
@@ -40,7 +40,7 @@ public class LvlEndManager : MonoBehaviour
     void Update()
     {
         if (GameState.isSceneEnd) return;
-        if (mainTower == null || mainTowerScript.Health <= 0) {
+        if (mainTower == null || mainTowerScript.Health <= 0 && mainTowerScript.lastHitter == "Enemy") {
             GameState.isSceneEnd = true;
             GameState.PauseGame(true);
             loseWindow.SetActive(true);

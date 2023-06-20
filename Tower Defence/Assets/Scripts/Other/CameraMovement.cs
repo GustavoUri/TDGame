@@ -21,7 +21,7 @@ public class CameraMovement : MonoBehaviour
     [SerializeField] private float mapXBound;
     private Vector3 _shootingCameraPosition;
     private Quaternion _cameraShootingAngle;
-    private Scope _scopeScript;
+    internal Scope _scopeScript;
     public Vector3 ScopePosition { get; private set; }
     [SerializeField] private float maxCameraYForShopView;
     public CameraViewState cameraState { get; private set; }
@@ -55,6 +55,12 @@ public class CameraMovement : MonoBehaviour
 
     void Update()
     {
+        if (GameState.IsGamePaused)
+        {
+            _scopeScript.enabled = false;
+            Cursor.visible = true;
+            return;
+        }
         if (Input.GetKeyUp("space"))
         {
             if (_isRotDone)

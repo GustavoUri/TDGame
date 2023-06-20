@@ -136,7 +136,7 @@ MonoBehaviour:
   <BulletPrefab>k__BackingField: {fileID: 2628850132464238609, guid: 0ff0af6dd579bf345a6c375525afd994, type: 3}
   <TurnSpeed>k__BackingField: 5
   <BulletShootPos>k__BackingField: {fileID: 89087621652612911}
-  <Price>k__BackingField: 200
+  <Price>k__BackingField: 50
   <ProjectileSpeed>k__BackingField: 20
   <ProjectileDamage>k__BackingField: 50
   <Range>k__BackingField: 40

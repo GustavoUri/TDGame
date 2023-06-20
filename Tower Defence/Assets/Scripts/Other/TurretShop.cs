@@ -148,12 +148,13 @@ public class TurretShop : MonoBehaviour
         _towerScript.Heal(script.Price);
         Destroy(turret);
     }
+
     // Update is called once per frame
     void Update()
     {
         GetMousePosition();
         CheckKeyboardNumbersPressed();
-        
+
         if (_isAbleToDeleteTurrets && CheckIfTurretOnPosition() && Input.GetMouseButtonUp(0))
         {
             DeleteTurret();
@@ -215,9 +216,26 @@ public class TurretShop : MonoBehaviour
 
     private void CheckPossibilityToInstantiate()
     {
-        var isEnoughSpace = !_obstructiveObjects.Any(gameObject =>
-            Vector3.Distance(gameObject.transform.position, _instantiatedModel.transform.position) <= 5);
-        _possibleToInstantiate = isEnoughSpace && _hit.collider.CompareTag("Terrain");
+        _possibleToInstantiate = true;
+        if (!_hit.transform.CompareTag("Terrain"))
+        {
+            _possibleToInstantiate = false;
+            return;
+        }
+
+        // foreach (var obstructiveObj in _obstructiveObjects)
+        // {
+        //     obstructiveObj.TryGetComponent<Collider>(out var coll);
+        //     if (coll == null)
+        //         continue;
+        //     var closestPoint = coll.ClosestPointOnBounds(_instantiatedModel.transform.position);
+        //     var dist = Vector3.Distance(closestPoint, _instantiatedModel.transform.position);
+        //     if (dist <= 1)
+        //     {
+        //         _possibleToInstantiate = false;
+        //         return;
+        //     }
+        // }
     }
 
     private bool CheckIfTurretOnPosition()

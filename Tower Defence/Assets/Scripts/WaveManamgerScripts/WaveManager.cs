@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class WaveManager : MonoBehaviour
@@ -58,6 +59,9 @@ public class WaveManager : MonoBehaviour
                 }else{
                     EnemySpawner(wave[i].enemy,wave[i].spawnPoint.position);
                 }
+
+                // if (wave == Waves.Last().Wave && wave[i] == wave.Last())
+                //     isSpawnEnd = true;
                 yield return new WaitForSeconds(wave[i].timeBetweenEnemy);
             }
         }

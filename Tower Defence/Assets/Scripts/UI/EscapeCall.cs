@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Other;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,11 +10,12 @@ public class EscapeCall : MonoBehaviour
     public Button continueButton;
     public Button restartButton;
     public Button menuButton;
-
+    private CameraMovement _cameraScript;
 
     // Start is called before the first frame update
     void Start()
     {
+        _cameraScript = Camera.main.GetComponent<CameraMovement>();
         menuWindow.SetActive(false);
     }
 
@@ -36,6 +38,18 @@ public class EscapeCall : MonoBehaviour
         if (GameState.isSceneEnd || !Input.GetKeyUp(KeyCode.Escape)) return;
         if (menuWindow.activeSelf)
         {
+            switch (_cameraScript.cameraState)
+            {
+                case CameraViewState.ShootingView:
+                    Cursor.visible = false;
+                    _cameraScript._scopeScript.enabled = true;
+                    break;
+                case CameraViewState.ShopView:
+                    Cursor.visible = true;
+                    _cameraScript._scopeScript.enabled = false;
+                    break;
+            }
+
             menuWindow.SetActive(false);
             GameState.PauseGame(false);
         }
@@ -43,6 +57,8 @@ public class EscapeCall : MonoBehaviour
         {
             menuWindow.SetActive(true);
             GameState.PauseGame(true);
+            Cursor.visible = true;
+            _cameraScript._scopeScript.enabled = false;
         }
     }
 }
