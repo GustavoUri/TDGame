@@ -138,9 +138,9 @@ MonoBehaviour:
   <BulletShootPos>k__BackingField: {fileID: 89087621652612911}
   <Price>k__BackingField: 50
   <ProjectileSpeed>k__BackingField: 20
-  <ProjectileDamage>k__BackingField: 50
+  <ProjectileDamage>k__BackingField: 30
   <Range>k__BackingField: 40
-  <FireRate>k__BackingField: 2
+  <FireRate>k__BackingField: 5
   <TargetTag>k__BackingField: Enemy
   <InstantiationRange>k__BackingField: 20
 --- !u!65 &7395123457643506535

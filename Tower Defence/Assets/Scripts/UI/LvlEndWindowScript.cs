@@ -22,7 +22,7 @@ public class LvlEndWindowScript : MonoBehaviour
         if (continueButton != null) continueButton.onClick.AddListener(() => { Loader.LoadNextLevel(); });
 
         if (menuButton != null) menuButton.onClick.AddListener(() => { Loader.Load(0, false); });
-        if (restartButton != null) restartButton.onClick.AddListener(() => { Loader.Load(5, true); });
+        if (restartButton != null) restartButton.onClick.AddListener(() => { Loader.LoadNextLevel(); });
     }
 
 

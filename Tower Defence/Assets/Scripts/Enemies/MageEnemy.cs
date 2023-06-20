@@ -20,6 +20,10 @@ public class MageEnemy : BaseEnemy
     {
         while (TowerScript != null)
         {
+            if (TowerScript.Health - Damage <= 0)
+                _script.enemyIsGone = true;
+            
+            
             TowerScript.GetDamage(DamageWhileRunning, gameObject.tag);
             yield return new WaitForSeconds(DamageRate);
         }

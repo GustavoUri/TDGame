@@ -21,10 +21,16 @@ public class BaseEnemy : MonoBehaviour, IEnemy, IDamageable, IFreezable
     protected MainTower TowerScript { get; set; }
     [field: SerializeField] protected Vector3 EndPosition { get; set; }
     protected Vector3 FollowPosition;
+    [SerializeField] private GameObject endManager;
+    protected LvlEndManager _script;
+    [SerializeField] private int healthBonus;
 
+    private bool _theChosenOne;
     // Start is called before the first frame update
     private void Awake()
     {
+        endManager = GameObject.Find("LevelEndUI");
+        _script = endManager.GetComponent<LvlEndManager>();
         Bar = gameObject.GetComponentInChildren<FloatingEnemyHealthBar>();
         NavMeshAgent = GetComponent<NavMeshAgent>();
         NavMeshAgent.speed = Speed;
@@ -65,7 +71,7 @@ public class BaseEnemy : MonoBehaviour, IEnemy, IDamageable, IFreezable
     private void CheckDeath()
     {
         if (Health > 0) return;
-        TowerScript.Heal(StealedHealth);
+        TowerScript.Heal(StealedHealth + healthBonus);
         Destroy(gameObject); // Умираем
     }
 
@@ -74,6 +80,8 @@ public class BaseEnemy : MonoBehaviour, IEnemy, IDamageable, IFreezable
         if (other.CompareTag("MainTower"))
         {
             СhangeSpeed(); //Меняем скорость, если этого не надо указываем speedAfter := speed
+            if (TowerScript.Health - Damage <= 0)
+                _theChosenOne = true;
             TowerScript.GetDamage(Damage, gameObject.tag);
             FollowPosition = EndPosition; // Меняем поизицию на обратную
             StealedHealth += Damage; // С кладываем сворованное хп
@@ -88,9 +96,11 @@ public class BaseEnemy : MonoBehaviour, IEnemy, IDamageable, IFreezable
     protected virtual void DestroyOnDistance()
     {
         var dist = Vector3.Distance(transform.position, EndPosition);
-        Debug.Log(dist);
+        //Debug.Log(dist);
         if (dist < 1f && FollowPosition == EndPosition)
         {
+            if (_theChosenOne)
+                _script.enemyIsGone = true;
             Destroy(gameObject);
         }
     }

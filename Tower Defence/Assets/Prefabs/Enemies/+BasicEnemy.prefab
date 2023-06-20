@@ -119,6 +119,7 @@ MonoBehaviour:
   <MaxHealth>k__BackingField: 100
   <Tower>k__BackingField: {fileID: 0}
   <EndPosition>k__BackingField: {x: 0, y: 0, z: 0}
+  healthBonus: 20
 --- !u!195 &7035667798253415079
 NavMeshAgent:
   m_ObjectHideFlags: 0

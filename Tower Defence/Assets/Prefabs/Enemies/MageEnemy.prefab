@@ -65,6 +65,7 @@ MonoBehaviour:
   <MaxHealth>k__BackingField: 150
   <Tower>k__BackingField: {fileID: 0}
   <EndPosition>k__BackingField: {x: 0, y: 0, z: 0}
+  healthBonus: 50
   <DamageWhileRunning>k__BackingField: 2
   <DamageRate>k__BackingField: 2
 --- !u!23 &1960722267225770939

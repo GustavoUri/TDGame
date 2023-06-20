@@ -10,8 +10,7 @@ public class LvlEndManager : MonoBehaviour
 
     private GameObject waveMananager;
     private WaveManager wave;
-
-
+    public bool enemyIsGone;
 
     [SerializeField] private GameObject winWindow;
     [SerializeField] private GameObject loseWindow;
@@ -40,7 +39,7 @@ public class LvlEndManager : MonoBehaviour
     void Update()
     {
         if (GameState.isSceneEnd) return;
-        if (mainTower == null || mainTowerScript.Health <= 0 && mainTowerScript.lastHitter == "Enemy") {
+        if (mainTower == null || (mainTowerScript.Health <= 0 && enemyIsGone)) {
             GameState.isSceneEnd = true;
             GameState.PauseGame(true);
             loseWindow.SetActive(true);

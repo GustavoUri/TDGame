@@ -145,7 +145,8 @@ public class TurretShop : MonoBehaviour
         var turret = _turretHit.collider.gameObject;
         _obstructiveObjects.Remove(turret);
         var script = turret.GetComponent<BaseTurret>();
-        _towerScript.Heal(script.Price);
+        //var healXp = (int)Math.Round(script.Price * 0.5);
+        _towerScript.Heal(script.Price / 2);
         Destroy(turret);
     }
 
@@ -209,7 +210,7 @@ public class TurretShop : MonoBehaviour
         modelScript.enabled = false;
         _modelRenderer = _instantiatedModel.GetComponent<Renderer>();
         _instantiatedCircle = Instantiate(turretModelCircle, _mousePosition, new Quaternion());
-        _instantiatedCircle.transform.localScale = new Vector3(5, 5, 5);
+        _instantiatedCircle.transform.localScale = new Vector3(modelScript.Range, modelScript.Range, modelScript.Range);
         _instantiatedCircle.transform.rotation = Quaternion.Euler(90, 0, 0);
         _circleRenderer = _instantiatedCircle.GetComponent<Renderer>();
     }

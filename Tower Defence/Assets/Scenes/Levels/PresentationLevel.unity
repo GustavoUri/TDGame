@@ -222,6 +222,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2195373628072744864, guid: d96def11fefd53f46909b033f0830f64, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d96def11fefd53f46909b033f0830f64, type: 3}
 --- !u!1 &15498766
@@ -690,6 +694,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 4a554f884878e6049aeb2f790ac0c0c8, type: 2}
+    - target: {fileID: 6203591773853691104, guid: abd2af1795cb40a478b525cc8271c0b7, type: 3}
+      propertyPath: <ProjectileDamage>k__BackingField
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6203591773853691105, guid: abd2af1795cb40a478b525cc8271c0b7, type: 3}
       propertyPath: m_RootOrder
       value: 18
@@ -966,7 +974,7 @@ MonoBehaviour:
       waitTime: -1
       timeBetweenEnemy: 1.9
       count: 1
-      enemy: {fileID: 1960722267225770917, guid: 7202a9b84da2f204bb9e5305118f0ad8, type: 3}
+      enemy: {fileID: 6477145078148386580, guid: af578132db39d4b4f8f652c9b1877fac, type: 3}
       spawnPoint: {fileID: 0}
     - ElementName: FirstEnemy
       waitTime: -1
@@ -1562,7 +1570,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 450340142}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 35.990295, y: 50.22945, z: 56.531525}
+  m_LocalPosition: {x: 36.990295, y: 49.22945, z: 56.531525}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2548,6 +2556,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CommonUI
       objectReference: {fileID: 0}
+    - target: {fileID: 7210131737266809710, guid: 2df442392e854034f9538ee8911e9a8d, type: 3}
+      propertyPath: image
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2df442392e854034f9538ee8911e9a8d, type: 3}
 --- !u!1001 &805192004
@@ -3284,7 +3296,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1510001308}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 150.4903, y: 49.72945, z: -39.468475}
+  m_LocalPosition: {x: 150.4903, y: 48.72945, z: -38.968475}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3572,7 +3584,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1681517377}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 183.4903, y: 50.22945, z: 66.531525}
+  m_LocalPosition: {x: 182.4903, y: 48.72945, z: 67.031525}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3603,7 +3615,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1702688563}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 40.990295, y: 49.72945, z: -38.468475}
+  m_LocalPosition: {x: 40.990295, y: 49.22945, z: -38.468475}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4160,6 +4172,10 @@ PrefabInstance:
       propertyPath: instantiatedModelOkColor.r
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1418516055983466072, guid: 3b54de7cb8b248242baafc11e4c2644a, type: 3}
+      propertyPath: m_text
+      value: 50
+      objectReference: {fileID: 0}
     - target: {fileID: 4826962825484094646, guid: 3b54de7cb8b248242baafc11e4c2644a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -4343,6 +4359,20 @@ PrefabInstance:
     - target: {fileID: 4826962827018067436, guid: 3b54de7cb8b248242baafc11e4c2644a, type: 3}
       propertyPath: m_Name
       value: TurretsUI
+      objectReference: {fileID: 0}
+    - target: {fileID: 4988299153849463072, guid: 3b54de7cb8b248242baafc11e4c2644a, type: 3}
+      propertyPath: m_text
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 6208328438113300406, guid: 3b54de7cb8b248242baafc11e4c2644a, type: 3}
+      propertyPath: m_text
+      value: '40
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8491257170286142384, guid: 3b54de7cb8b248242baafc11e4c2644a, type: 3}
+      propertyPath: m_text
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3b54de7cb8b248242baafc11e4c2644a, type: 3}

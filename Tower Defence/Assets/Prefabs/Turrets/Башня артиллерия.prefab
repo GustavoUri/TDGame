@@ -111,7 +111,7 @@ MonoBehaviour:
   <FireRate>k__BackingField: 3
   <TargetTag>k__BackingField: Enemy
   <InstantiationRange>k__BackingField: 20
-  <ExplosionRange>k__BackingField: 5
+  <ExplosionRange>k__BackingField: 15
 --- !u!65 &-354131216403532108
 BoxCollider:
   m_ObjectHideFlags: 0
