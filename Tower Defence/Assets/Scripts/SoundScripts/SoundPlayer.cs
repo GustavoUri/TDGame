@@ -78,5 +78,9 @@ public class SoundPlayer: MonoBehaviour
         if (GameState.isSoundAccitve && !GameState.isSceneEnd) AudioSource.PlayClipAtPoint(singltonSoundPlayer.turretSellSound[0], volumeSourse.transform.position);
     }
 
+    public static void PlayStealSound(GameObject volumeSourse)
+    {
+        if (GameState.isSoundAccitve && !GameState.isSceneEnd) AudioSource.PlayClipAtPoint(singltonSoundPlayer.stealingSound[0], volumeSourse.transform.position);
+    }
 
 }
